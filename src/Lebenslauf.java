@@ -1,12 +1,13 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Diese Klasse beschreibt meinen Lebenslauf.
  */
 public class Lebenslauf {
+    static final int MAXLINELENGTH = 80;
+    static boolean open = true;
 
     /**
      * Diese Methode speichert meine persoenlichen Daten in einer HashMap.
@@ -393,6 +394,9 @@ public class Lebenslauf {
     }
 
     public static void main(String[] args) {
+        makeLebenslauf();
+    }
+    public static void makeLebenslauf() {
         ueberschrift();
         print(persoenlicheDaten(), "pers\u00F6nliche Daten");
         print(bildung(), "Bildungsweg");
@@ -403,14 +407,26 @@ public class Lebenslauf {
         leaveTerminalOpen();
     }
 
+    public static void makeTxt() {
+        File file = new File("Lebenslauf_Nicolas_Mahn.txt");
+        FileOutputStream fos = null;
+        try {fos = new FileOutputStream(file);} catch (FileNotFoundException e) {e.printStackTrace();}
+        PrintStream ps = new PrintStream(fos);
+        System.setOut(ps);
+        makeLebenslauf();
+        ps.close();
+        try {fos.close();} catch (IOException e) {e.printStackTrace();}
+    }
+
     public static void ueberschrift() {
         System.out.println(" # Lebenslauf");
         hr();
-        System.out.print("\nDieser Lebenslauf wurde Ihnen bereitgestellt von: ");
+        System.out.print(newLine("\nDieser Lebenslauf wurde Ihnen bereitgestellt von: " +
+                "https://github.com/NicolasMahn/Lebenslauf", 0));
     }
 
     public static void hr() {
-        for (int i = 0; i < 80; i++) System.out.print('-');
+        for (int i = 0; i < MAXLINELENGTH; i++) System.out.print('-');
     }
 
     public static void print(Object obj, String ueberschrift) {
@@ -468,22 +484,21 @@ public class Lebenslauf {
     }
 
     public static String newLine(String s, int space, int nlSpace) {
-        int MAXLENGTH = 80;
         String s1 = s;
         String s2 = "";
-        if (s.length()+space > MAXLENGTH){
+        if (s.length()+space > MAXLINELENGTH){
             int lastSpace = 420;
-            for( int i=0; i<s.length() && i<MAXLENGTH-space; i++ ) if(s.charAt(i) == ' ') lastSpace = i;
+            for(int i = 0; i<s.length() && i< MAXLINELENGTH -space; i++ ) if(s.charAt(i) == ' ') lastSpace = i;
             if (lastSpace != 420) {
                 s1 = s.substring(0, lastSpace) + "\n";
                 s2 = getSpace(nlSpace) + s.substring(lastSpace+1);
             }
             else {
-                s1 = s.substring(0, MAXLENGTH - 1 - space) + "-\n";
-                s2 = getSpace(nlSpace) + s.substring(MAXLENGTH - space);
+                s1 = s.substring(0, MAXLINELENGTH - 1 - space) + "-\n";
+                s2 = getSpace(nlSpace) + s.substring(MAXLINELENGTH - space);
             }
         }
-        if (s2.length() > MAXLENGTH) s2 = newLine(s2, space, nlSpace);
+        if (s2.length() > MAXLINELENGTH) s2 = newLine(s2, space, nlSpace);
         return (s1 + s2);
     }
 
@@ -501,12 +516,26 @@ public class Lebenslauf {
     }
 
     public static void leaveTerminalOpen() {
-        System.out.println("\n\nDr\u00FCcke 'Enter' um dieses Fenster zu schlie\u00DFen");
+        if (open) {
+            System.out.println("\n\nDr\u00FCcke 'x' um dieses Fenster zu schlie\u00DFen");
+            System.out.println("Dr\u00FCcke 'p' um diesen Lebenslauf in eine .txt zu drucken");
+        }
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        try {
-            in.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
+        while(open) {
+            String s = "";
+            try {
+                s = in.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (s.charAt(0) == 'x') open = false;
+            else if (s.charAt(0) == 'p') {
+                System.out.println("Der Lebenslauf ist unter 'Lebenslauf_Nicolas_Mahn.txt' zu finden");
+                System.out.println("Dieses Fenster schlie\u00DFt sich dabei...");
+                try {TimeUnit.SECONDS.sleep(1);} catch (InterruptedException e) {e.printStackTrace();}
+                open = false;
+                makeTxt();
+            }
         }
     }
 }
