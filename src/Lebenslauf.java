@@ -394,7 +394,6 @@ public class Lebenslauf {
 
     /**
      * Die main Methode der Klasse
-     * @param args
      */
     public static void main(String[] args) {
         makeLebenslauf();
