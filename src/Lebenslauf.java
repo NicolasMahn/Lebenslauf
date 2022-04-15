@@ -279,7 +279,7 @@ public class Lebenslauf {
     }
 
     /**
-     * TODO
+     * In diesem Enum werden die Ueberthemen definiert
      */
     public enum Ueberthema {
         Fremdsprachen,
@@ -299,7 +299,7 @@ public class Lebenslauf {
 
         /**
          * Das ist der Konstruktor des Objekts
-         * @param ueberthema TODO
+         * @param ueberthema beschreibt das Ueberthema der Qualifikation
          * @param qualifikation mit diesem Attribut ist der Name der Qualifikation gemeint
          * @param note Hie wird nach eigener Bewertung abgespeichert wie gut ich mich mit dem
          *             Thema auskenne
@@ -312,7 +312,7 @@ public class Lebenslauf {
 
         /**
          * Das ist der zweite Konstruktor des Objekts
-         * @param ueberthema TODO
+         * @param ueberthema beschreibt das Ueberthema der Qualifikation
          * @param qualifikation mit diesem Attribut ist der Name der Qualifikation gemeint
          */
         public Qualifikation(Ueberthema ueberthema, String qualifikation) {
@@ -364,7 +364,6 @@ public class Lebenslauf {
             Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation,
             Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation>
     qualifikationen() {
-
         Qualifikation eng = new Qualifikation(Ueberthema.Fremdsprachen,"Englisch",1);
         Qualifikation fr = new Qualifikation(Ueberthema.Fremdsprachen,"Franz\u00F6sisch",2);
 
@@ -393,9 +392,17 @@ public class Lebenslauf {
                 fc, epk, mw, ltx, mpp, me, mt, zoom, sap);
     }
 
+    /**
+     * Die main Methode der Klasse
+     * @param args
+     */
     public static void main(String[] args) {
         makeLebenslauf();
     }
+
+    /**
+     * In dieser Methode werden die meisten Funktionen der Klasse ausgefuehrt
+     */
     public static void makeLebenslauf() {
         ueberschrift();
         print(persoenlicheDaten(), "pers\u00F6nliche Daten");
@@ -404,9 +411,12 @@ public class Lebenslauf {
         print(auslandsaufenthalte(), "Auslandsaufenthalte");
         print(engagementFreizeit(), "Engagement und Freizeit");
         print(qualifikationen(), "Qualifikationen");
-        leaveTerminalOpen();
+        menu();
     }
 
+    /**
+     * diese Methode erstellt das Lebenslauf_Nicolas_Mahn.txt
+     */
     public static void makeTxt() {
         File file = new File("Lebenslauf_Nicolas_Mahn.txt");
         FileOutputStream fos = null;
@@ -418,6 +428,9 @@ public class Lebenslauf {
         try {fos.close();} catch (IOException e) {e.printStackTrace();}
     }
 
+    /**
+     * Diese Methode schreibt die Ueberschrift
+     */
     public static void ueberschrift() {
         System.out.println(" # Lebenslauf");
         hr();
@@ -425,10 +438,18 @@ public class Lebenslauf {
                 "https://github.com/NicolasMahn/Lebenslauf", 0));
     }
 
+    /**
+     * Diese Methode schreibt eine Linie Aenlich wie man hr aus html kennt
+     */
     public static void hr() {
         for (int i = 0; i < MAXLINELENGTH; i++) System.out.print('-');
     }
 
+    /**
+     * In dieser Methode werden die Datenpunkte des Lebenslaufs geschrieben
+     * @param obj Das Objekt, welches die Daten beinhaltet
+     * @param ueberschrift Ist die unterüberschrift
+     */
     public static void print(Object obj, String ueberschrift) {
         System.out.println();
         hr();
@@ -445,6 +466,11 @@ public class Lebenslauf {
         }
     }
 
+    /**
+     * Diese Methode schreibt alle Objekte die in einem Tuple gespeichert sind
+     * @param tuple des Tuple Objekt, welches ausgedruckt werden soll
+     * @param num gibt die groesse des Tuples an
+     */
     public static void printTuple(Tuple tuple, int num) {
         System.out.println(tuple.getFirst());
         System.out.println(tuple.getSecond());
@@ -472,6 +498,13 @@ public class Lebenslauf {
         }
     }
 
+    /**
+     * Diese Methode macht aus einer HashMap einen String
+     * @param hm ist die zu Übergebende HashMap
+     * @param <K> K ist das key Objekt der HashMap
+     * @param <V> V ist dsa Value Objekt der HashMap
+     * @return wird ein String, der die HashMap beschreibt
+     */
     @SuppressWarnings("SuspiciousMethodCalls")
     public static <K, V> String hashMapToString(HashMap<K,V> hm) {
         Iterator<K> it = hm.keySet().iterator();
@@ -483,6 +516,15 @@ public class Lebenslauf {
         return s.substring(0,s.length()-1);
     }
 
+    /**
+     * Diese Methode fügt ein Enter in einen zu langen String hinzu und handelt dabei auch das tabbing.
+     * Dabei wird erst ein Enter hinzugefügt wenn der String die oben angegebene MAXLINELENGTH überschreitet.
+     * Wenn moeglich bei einem Leerzeichen, sonst wird ein Wort geteilt.
+     * @param s Der String welcher in lines getrennt werden soll
+     * @param space Der Platz vor dem String s
+     * @param nlSpace Der Tab in der nächsten Zeile
+     * @return wird der String mit Enters und Tabs
+     */
     public static String newLine(String s, int space, int nlSpace) {
         String s1 = s;
         String s2 = "";
@@ -498,24 +540,40 @@ public class Lebenslauf {
                 s2 = getSpace(nlSpace) + s.substring(MAXLINELENGTH - space);
             }
         }
-        if (s2.length() > MAXLINELENGTH) s2 = newLine(s2, space, nlSpace);
+        if (s2.length() > MAXLINELENGTH) s2 = newLine(s2, nlSpace, nlSpace);
         return (s1 + s2);
     }
 
     public static String newLine(String s, int space) {return newLine(s,space,space);}
 
+    /**
+     * Diese Methode erstellt aus einer int ein String mit Leerzeichen, in der Laenge des ints.
+     * @param len gibt die endgueltige laenge des Strings an
+     * @return gibt den String in der laenge des ints zurueck
+     */
     public static String getSpace(int len) {
         char[] chars = new char[len];
         Arrays.fill(chars, ' ');
         return new String(chars);
     }
 
+    /**
+     * Diese Methode handelt auch tabbing, diese fuegt zu Enters allerdings 'nur' ein tab hinzu
+     * @param s beschreibt den String der getabbt werden soll
+     * @param len beschreibt die laenge des Strings
+     * @return wird der String s mit tabs
+     */
     public static String addSpace(String s, int len) {
         String space = getSpace(len);
         return s.replace("\n", "\n"+space);
     }
 
-    public static void leaveTerminalOpen() {
+    /**
+     * Diese Methode gibt dem User 2 Optionen:
+     * A) Die Applikation zu schließen
+     * B) ein .txt aus der Consolen Ausgabe zu erstellen
+     */
+    public static void menu() {
         if (open) {
             System.out.println("\n\nDr\u00FCcke 'x' um dieses Fenster zu schlie\u00DFen");
             System.out.println("Dr\u00FCcke 'p' um diesen Lebenslauf in eine .txt zu drucken");
@@ -540,6 +598,9 @@ public class Lebenslauf {
     }
 }
 
+/**
+ * Diese Klasse ist die Vaterklasse aller spezifischen Tuple also tuple mit einer definierten Laenge
+ */
 class Tuple {
     public Object getFirst(){return null;}
     public Object getSecond(){return null;}
@@ -563,6 +624,9 @@ class Tuple {
     public Object getTwentieth(){return null;}
 }
 
+/**
+ * Diese Klasse kann 3 unterschiedliche Objekte in einem, diesem, Objekt speichern
+ */
 class Tuple3<A, B, C>  extends  Tuple {
     public A first; public B second; public C third;
 
@@ -575,6 +639,9 @@ class Tuple3<A, B, C>  extends  Tuple {
     public C getThird() {return third;}
 }
 
+/**
+ * Diese Klasse kann 4 unterschiedliche Objekte in einem, diesem, Objekt speichern
+ */
 class Tuple4<A, B, C, D>  extends  Tuple  {
     public A first; public B second; public C third; public D fourth;
 
@@ -588,7 +655,9 @@ class Tuple4<A, B, C, D>  extends  Tuple  {
     public D getFourth() {return fourth;}
 }
 
-
+/**
+ * Diese Klasse kann 9 unterschiedliche Objekte in einem, diesem, Objekt speichern
+ */
 class Tuple9<A, B, C, D, E, F, G, H, I>  extends  Tuple  {
     public A first; public B second; public C third; public D fourth; public E fifth; public F sixth; public G seventh;
     public H eighth; public I ninth;
@@ -609,6 +678,9 @@ class Tuple9<A, B, C, D, E, F, G, H, I>  extends  Tuple  {
     public I getNinth() {return ninth;}
 }
 
+/**
+ * Diese Klasse kann 20 unterschiedliche Objekte in einem, diesem, Objekt speichern
+ */
 class Tuple20<A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T>  extends  Tuple  {
     public A first; public B second; public C third; public D fourth; public E fifth; public F sixth; public G seventh;
     public H eighth; public I ninth; public J tenth; public K eleventh; public L twelfth; public M thirteenth;
