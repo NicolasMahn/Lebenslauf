@@ -14,7 +14,7 @@ public class Lebenslauf {
      * @return wird die HashMap mit den pers. Daten
      */
     public static String persoenlicheDaten() {
-        HashMap<String, String> persInfo = new HashMap<>(){{
+        HashMap<String, String> persInfo = new HashMap<String, String>(){{
             put("Name", "Nicolas Mahn");
             put("Adresse", "Untere Brandstra\u00DFe 62, 70567 Stuttgart");
             put("E-Mail", "Nicolas.Mahn@gmx.de");
