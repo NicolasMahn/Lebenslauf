@@ -1,7 +1,7 @@
  # Lebenslauf
  
  <b> Open Lebenslauf: https://github.com/NicolasMahn/Lebenslauf/blob/master/Lebenslauf_Nicolas_Mahn.txt
-</b>
+</b><br><br>
 
  ## How to Import Project
 
