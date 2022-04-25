@@ -1,8 +1,12 @@
+package tuple;
+
+import tuple.Tuple;
+
 /**
  * @author NicolasMahn
  * Diese Klasse kann 9 unterschiedliche Objekte in einem, diesem, Objekt speichern
  */
-class Tuple9<A, B, C, D, E, F, G, H, I>  extends  Tuple  {
+public class Tuple9<A, B, C, D, E, F, G, H, I>  extends Tuple {
     public A first; public B second; public C third; public D fourth; public E fifth; public F sixth; public G seventh;
     public H eighth; public I ninth;
 

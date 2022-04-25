@@ -1,8 +1,12 @@
+package tuple;
+
+import tuple.Tuple;
+
 /**
  * @author NicolasMahn
  * Diese Klasse kann 4 unterschiedliche Objekte in einem, diesem, Objekt speichern
  */
-class Tuple4<A, B, C, D>  extends  Tuple  {
+public class Tuple4<A, B, C, D>  extends Tuple {
     public A first; public B second; public C third; public D fourth;
 
     public Tuple4(A first, B second, C third, D fourth){

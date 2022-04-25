@@ -1,12 +1,14 @@
+import tuple.*;
+
 import java.io.*;
-import java.util.*;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * @author NicolasMahn
  * Diese Klasse beschreibt meinen Lebenslauf.
  */
 public class Lebenslauf {
-    static final int MAXLINELENGTH = 80;
     static boolean open = true;
 
     /**
@@ -20,66 +22,12 @@ public class Lebenslauf {
             put("E-Mail", "Nicolas.Mahn@gmx.de");
             put("Tel.", "015206501315");
             put("Geboren", "2000-08-07 in Stuttgart");}};
-        return hashMapToString(persInfo);
-    }
-
-    /**
-     * Dieses Objekt wird zum speichern meines Bildungsweges verwendet.
-     * Unter Bildung wird in diesem Fall sowohl mein Bildungsweg und mein
-     * bisheriges Berufsleben zusammengefasst.
-     */
-    public static class Bildung{
-        String von;
-        String bis;
-        String was;
-        String abschluss;
-        String wo;
-        String sonstiges;
-        String ort;
-
-        /**
-         * Das ist der Konstruktor des Bildungsobjekts.
-         * @param von beschreibt wann ich mit dieser Taetigkeit angefangen habe
-         * @param bis beschreibt wann ich diese Taetigkeit abgeschlossen habe
-         * @param was beschreibt die Taetigkeit die ich gemacht habe
-         * @param abschluss gibt an mit welchem Abschluss die Taetigkeit beendet wurde
-         * @param wo beschreibt an welchem Institut die Taetigkeit stattgefunden hat
-         * @param ort beschreibt die Stadt wo die Taetigkeit stattgefunden hat
-         * @param sonstiges ist ein Freitext um besonderheiten festzuhalten
-         */
-        public Bildung(String von, String bis, String was, String abschluss, String wo, String ort, String sonstiges) {
-            this.von = von;
-            this.bis = bis;
-            this.was = was;
-            this.abschluss = abschluss;
-            this.wo = wo;
-            this.ort = ort;
-            this.sonstiges = sonstiges;
-        }
-
-        /**
-         * toString wandelt das Objekt in einen String um, um ihn ausgeben zu koennen.
-         * @return Objekt als String
-         */
-        @Override
-        public String toString() {
-            String s = was+": ";
-            String space = getSpace(s.length());
-            if (bis == null) s += "Seit "+von+"\n";
-            else if (von == null) s += "Bis "+bis+"\n";
-            else s += "Von "+von+"-"+bis+"\n";
-            s += space+wo;
-            if (ort != null) s += " in " + newLine(ort, space.length()+wo.length()+4, space.length());
-            if (abschluss != null) s += "\n"+space+"Abschluss: " + newLine(abschluss, space.length()+11);
-            if (sonstiges != null) s += "\n"+space+"("+newLine(sonstiges, space.length())+")";
-            s += "\n";
-            return s;
-        }
+        return Utils.hashMapToString(persInfo);
     }
 
     /**
      * Diese Methode erstellt Bildungsobjekte aus meinen bisherigen Taetigkeiten.
-     * @return wird ein Tuple mit allen 4 Bildungsobjekten
+     * @return wird ein tuple.Tuple mit allen 4 Bildungsobjekten
      */
     public static Tuple4<Bildung, Bildung, Bildung, Bildung> bildung() {
         Bildung studium = new Bildung("09.2019", null,
@@ -114,63 +62,11 @@ public class Lebenslauf {
     }
 
     /**
-     * Dieses Objekt wird zum speichern meiner Erfahrungen genutzt.
-     * Mit Erfahrungen sind hier hauptsaechlich wissenschaftliche Arbeiten gemeint,
-     * welche ich im Lauf meines Studiums gemacht habe
-     */
-    public static class Erfahrung{
-        int semester;
-        String art;
-        String beschreibung;
-        String gitHubLink = null;
-
-        /**
-         * Das ist der Konstruktor des Erfahrungsobjekts
-         * @param semester beschreibt in welchem Semester ich die Arbeit geschrieben habe
-         * @param art beschreibt was ich gemacht habe i.e. Hausarbeit oder Projekt...
-         * @param beschreibung Ein Freitext in welchem die Erfahrung kurz beschrieben wird
-         * @param gitHubLink Ein Link zu dem Projekt auf GitHub wenn vorhanden
-         */
-        public Erfahrung(int semester, String art, String beschreibung, String gitHubLink) {
-            this.semester = semester;
-            this.art = art;
-            this.beschreibung = beschreibung;
-            this.gitHubLink = gitHubLink;
-        }
-
-        /**
-         * Das ist der zweite Konstruktor des Erfahrungsobjekt,
-         * fuer den Fall, dass es keinen GitHubLink gibt
-         * @param semester beschreibt in welchem Semester ich die Arbeit geschrieben habe
-         * @param art beschreibt was ich gemacht habe i.e. Hausarbeit oder Projekt...
-         * @param beschreibung Ein Freitext in welchem die Erfahrung kurz beschrieben wird
-         */
-        public Erfahrung(int semester, String art, String beschreibung) {
-            this.semester = semester;
-            this.art = art;
-            this.beschreibung = beschreibung;
-        }
-
-        /**
-         * toString wandelt das Objekt in einen String um, um ihn ausgeben zu koennen.
-         * @return Objekt als String
-         */
-        @Override
-        public String toString() {
-            int NLSPACE = 10;
-            String s = art + " \u00FCber " + newLine(beschreibung, art.length()+6, NLSPACE);
-            if (gitHubLink != null) s += "\n" + getSpace(NLSPACE) + "GitHub Link: " + gitHubLink;
-            s += "\n" + getSpace(NLSPACE) + semester + " Semester\n";
-            return s;
-        }
-    }
-
-    /**
      * Diese Methode speichert meine Erfahrungen in das entsprechende Objekt
      * @return ArrayListe mit allen Erfahrungsobjekten
      */
     public static Tuple9<Erfahrung, Erfahrung, Erfahrung, Erfahrung, Erfahrung,
-            Erfahrung, Erfahrung, Erfahrung, Erfahrung> studium() {
+                Erfahrung, Erfahrung, Erfahrung, Erfahrung> studium() {
 
         Erfahrung cph = new Erfahrung(2, "Wissenschaftliche Arbeit",
                 "Cyber Physical Hacks");
@@ -202,45 +98,8 @@ public class Lebenslauf {
     }
 
     /**
-     * Dieses Objekt wird zum speichern meiner Auslandsaufenthalte genutzt
-     */
-    public static class Auslandsaufenthalt{
-        String antritt;
-        String abreise;
-        String land;
-        String stadt;
-        String taetigkeit;
-
-        /**
-         * Das ist der Kunstruktor des Auslandsaufenthaltobjekts
-         * @param antritt beschreibt wann ich ins Ausland gefahren bin
-         * @param abreise beschreibt wann ich nach Deutschland zurueckgekehrt bin
-         * @param land sagt aus in welchem Land ich war
-         * @param stadt sagt aus in welcher Stadt ich war
-         * @param taetigkeit beschreibt was ich im Ausland gemacht habe
-         */
-        public Auslandsaufenthalt(String antritt, String abreise, String land, String stadt, String taetigkeit) {
-            this.antritt = antritt; this.abreise = abreise;
-            this.land = land; this.stadt = stadt;	this.taetigkeit = taetigkeit;
-        }
-
-        /**
-         * toString wandelt das Objekt in einen String um, um ihn ausgeben zu koennen.
-         * @return Objekt als String
-         */
-        @Override
-        public String toString() {
-            String s= stadt+ ", " + land + " ";
-            int len = s.length();
-            s += "vom " + antritt + " bis " + abreise;
-            s += "\n" + newLine(taetigkeit, stadt.length()+land.length()+3, 0) + "\n";
-            return addSpace(s, len);
-        }
-    }
-
-    /**
      * Diese Methode speichert meine Auslandsaufenthalte in einem Objekten ab
-     * @return wird ein Tuple mit 3 Objekten
+     * @return wird ein tuple.Tuple mit 3 Objekten
      */
     public static Tuple3<Auslandsaufenthalt, Auslandsaufenthalt, Auslandsaufenthalt> auslandsaufenthalte() {
         Auslandsaufenthalt nordirland = new Auslandsaufenthalt
@@ -262,7 +121,7 @@ public class Lebenslauf {
 
     /**
      * Diese Methode speichert meine Freizeitaktivitaeten in Strings ab
-     * @return werden die Strings als Tuple
+     * @return werden die Strings als tuple.Tuple
      */
     public static Tuple3<String, String, String> engagementFreizeit() {
         String pfadfinder = "Deutsche Pfadfinderschaft Sankt Georg \n" +
@@ -278,115 +137,59 @@ public class Lebenslauf {
         return new Tuple3<>(pfadfinder, fachschaft, hobbys);
     }
 
-    /**
-     * In diesem Enum werden die Ueberthemen definiert
-     */
-    public enum Ueberthema {
-        Fremdsprachen,
-        Programmiersprachen,
-        Modellierungssprachen,
-        sonstige_Qualifikationen
-    }
 
-    /**
-     * In diesem Pbjekt koennen meine Qualtifikationen gespeichert werden
-     */
-    public static class Qualifikation{
-        Ueberthema ueberthema;
-        String qualifikation;
-        int note = 0; //von 1-6 in Schulnoten
-        static Ueberthema prev = null;
-
-        /**
-         * Das ist der Konstruktor des Objekts
-         * @param ueberthema beschreibt das Ueberthema der Qualifikation
-         * @param qualifikation mit diesem Attribut ist der Name der Qualifikation gemeint
-         * @param note Hie wird nach eigener Bewertung abgespeichert wie gut ich mich mit dem
-         *             Thema auskenne
-         */
-        public Qualifikation(Ueberthema ueberthema, String qualifikation, int note) {
-            this.ueberthema = ueberthema;
-            this.qualifikation = qualifikation;
-            this.note = note;
-        }
-
-        /**
-         * Das ist der zweite Konstruktor des Objekts
-         * @param ueberthema beschreibt das Ueberthema der Qualifikation
-         * @param qualifikation mit diesem Attribut ist der Name der Qualifikation gemeint
-         */
-        public Qualifikation(Ueberthema ueberthema, String qualifikation) {
-            this.ueberthema = ueberthema;
-            this.qualifikation = qualifikation;
-        }
-
-        /**
-         * toString wandelt das Objekt in einen String um, um ihn ausgeben zu koennen.
-         * @return Objekt als String
-         */
-        @Override
-        public String toString() {
-            final int SPACENOTE = 15;
-            String s = "";
-            if (prev != ueberthema) {
-                if (prev != null) s+= "\n";
-                s += " ### " + ueberthema + ":\n";
-                prev = ueberthema;
-            }
-            s +=  qualifikation;
-            if (note != 0) {
-                String space = getSpace(SPACENOTE - qualifikation.length());
-                s += space + "Eigene Bewertung: ";
-                switch (note) {
-                    case 1: s += "sehr gut";
-                            break;
-                    case 2: s += "gut";
-                            break;
-                    case 3: s += "befriedigend";
-                            break;
-                    case 4: s += "ausreichend";
-                            break;
-                    case 5: s += "mangelhaft";
-                            break;
-                    case 6: s += "ungen\u00FCgent";
-                            break;
-                }
-            }
-            return s;
-        }
-    }
 
     /**
      * Diese Methode speichert meine Qualifikationen in einem Objekten ab
-     * @return wird ein Tuple mit 4 Objekten
+     * @return wird ein tuple.Tuple mit 4 Objekten
      */
     public static Tuple20<Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation,
-            Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation,
-            Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation>
+                Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation,
+                Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation, Qualifikation>
     qualifikationen() {
-        Qualifikation eng = new Qualifikation(Ueberthema.Fremdsprachen,"Englisch",1);
-        Qualifikation fr = new Qualifikation(Ueberthema.Fremdsprachen,"Franz\u00F6sisch",2);
+        Qualifikation eng = new Qualifikation(Qualifikation.Ueberthema.Fremdsprachen,
+                "Englisch",1);
+        Qualifikation fr = new Qualifikation(Qualifikation.Ueberthema.Fremdsprachen,
+                "Franz\u00F6sisch",2);
 
-        Qualifikation java = new Qualifikation(Ueberthema.Programmiersprachen,"Java", 1);
-        Qualifikation x86 = new Qualifikation(Ueberthema.Programmiersprachen,"x86 Assembler", 1);
-        Qualifikation py = new Qualifikation(Ueberthema.Programmiersprachen,"Python",  1);
-        Qualifikation sql = new Qualifikation(Ueberthema.Programmiersprachen,"SQL", 2);
-        Qualifikation noSql = new Qualifikation(Ueberthema.Programmiersprachen,"NoSQL", 2);
-        Qualifikation wd = new Qualifikation(Ueberthema.Programmiersprachen,"Webdesign", 2);
-        Qualifikation gql = new Qualifikation(Ueberthema.Programmiersprachen,"GraphQL", 3);
+        Qualifikation java = new Qualifikation(Qualifikation.Ueberthema.Programmiersprachen,
+                "Java", 1);
+        Qualifikation x86 = new Qualifikation(Qualifikation.Ueberthema.Programmiersprachen,
+                "x86 Assembler", 1);
+        Qualifikation py = new Qualifikation(Qualifikation.Ueberthema.Programmiersprachen,
+                "Python",  1);
+        Qualifikation sql = new Qualifikation(Qualifikation.Ueberthema.Programmiersprachen,
+                "SQL", 2);
+        Qualifikation noSql = new Qualifikation(Qualifikation.Ueberthema.Programmiersprachen,
+                "NoSQL", 2);
+        Qualifikation wd = new Qualifikation(Qualifikation.Ueberthema.Programmiersprachen,
+                "Webdesign", 2);
+        Qualifikation gql = new Qualifikation(Qualifikation.Ueberthema.Programmiersprachen,
+                "GraphQL", 3);
 
-        Qualifikation uml = new Qualifikation(Ueberthema.Modellierungssprachen,"UML", 2);
-        Qualifikation bpmn = new Qualifikation(Ueberthema.Modellierungssprachen,"BPMN", 3);
-        Qualifikation fc = new Qualifikation(Ueberthema.Modellierungssprachen,"Flowchart", 3);
-        Qualifikation epk = new Qualifikation(Ueberthema.Modellierungssprachen,"EPK", 3);
+        Qualifikation uml = new Qualifikation(Qualifikation.Ueberthema.Modellierungssprachen,
+                "UML", 2);
+        Qualifikation bpmn = new Qualifikation(Qualifikation.Ueberthema.Modellierungssprachen,
+                "BPMN", 3);
+        Qualifikation fc = new Qualifikation(Qualifikation.Ueberthema.Modellierungssprachen,
+                "Flowchart", 3);
+        Qualifikation epk = new Qualifikation(Qualifikation.Ueberthema.Modellierungssprachen,
+                "EPK", 3);
 
-        Qualifikation mw = new Qualifikation(Ueberthema.sonstige_Qualifikationen,"Microsoft Word");
-        Qualifikation ltx = new Qualifikation(Ueberthema.sonstige_Qualifikationen,"LaTeX");
-        Qualifikation mpp = new Qualifikation(Ueberthema.sonstige_Qualifikationen,"Microsoft Power Point");
-        Qualifikation me = new Qualifikation(Ueberthema.sonstige_Qualifikationen,"Microsoft Excel");
-        Qualifikation mt = new Qualifikation(Ueberthema.sonstige_Qualifikationen,"Microsoft Teams");
-        Qualifikation zoom = new Qualifikation(Ueberthema.sonstige_Qualifikationen,"Zoom");
-        Qualifikation sap = new Qualifikation(Ueberthema.sonstige_Qualifikationen,"SAP");
+        Qualifikation mw = new Qualifikation(Qualifikation.Ueberthema.sonstige_Qualifikationen,
+                "Microsoft Word");
+        Qualifikation ltx = new Qualifikation(Qualifikation.Ueberthema.sonstige_Qualifikationen,
+                "LaTeX");
+        Qualifikation mpp = new Qualifikation(Qualifikation.Ueberthema.sonstige_Qualifikationen,
+                "Microsoft Power Point");
+        Qualifikation me = new Qualifikation(Qualifikation.Ueberthema.sonstige_Qualifikationen,
+                "Microsoft Excel");
+        Qualifikation mt = new Qualifikation(Qualifikation.Ueberthema.sonstige_Qualifikationen,
+                "Microsoft Teams");
+        Qualifikation zoom = new Qualifikation(Qualifikation.Ueberthema.sonstige_Qualifikationen,
+                "Zoom");
+        Qualifikation sap = new Qualifikation(Qualifikation.Ueberthema.sonstige_Qualifikationen,
+                "SAP");
 
         return new Tuple20<>(eng, fr, java, x86, py, sql, noSql, wd, gql,uml, bpmn,
                 fc, epk, mw, ltx, mpp, me, mt, zoom, sap);
@@ -432,16 +235,9 @@ public class Lebenslauf {
      */
     public static void ueberschrift() {
         System.out.println(" # Lebenslauf");
-        hr();
-        System.out.print(newLine("\nDieser Lebenslauf wurde Ihnen bereitgestellt von: " +
+        Utils.hr();
+        System.out.print(Utils.newLine("\nDieser Lebenslauf wurde Ihnen bereitgestellt von: " +
                 "https://github.com/NicolasMahn/Lebenslauf", 0));
-    }
-
-    /**
-     * Diese Methode schreibt eine Linie Aenlich wie man hr aus html kennt
-     */
-    public static void hr() {
-        for (int i = 0; i < MAXLINELENGTH; i++) System.out.print('-');
     }
 
     /**
@@ -451,11 +247,11 @@ public class Lebenslauf {
      */
     public static void print(Object obj, String ueberschrift) {
         System.out.println();
-        hr();
+        Utils.hr();
         System.out.println("\n ## " + ueberschrift + "\n");
 
         String klasse = obj.getClass().toString();
-        if (!klasse.contains("Tuple")) System.out.println(obj + "\n");
+        if (!klasse.contains("tuple.Tuple")) System.out.println(obj + "\n");
         else {
             int num;
             if (Character.isDigit(klasse.charAt(klasse.length() - 2)))
@@ -466,8 +262,8 @@ public class Lebenslauf {
     }
 
     /**
-     * Diese Methode schreibt alle Objekte die in einem Tuple gespeichert sind
-     * @param tuple des Tuple Objekt, welches ausgedruckt werden soll
+     * Diese Methode schreibt alle Objekte die in einem tuple.Tuple gespeichert sind
+     * @param tuple des tuple.Tuple Objekt, welches ausgedruckt werden soll
      * @param num gibt die groesse des Tuples an
      */
     public static void printTuple(Tuple tuple, int num) {
@@ -498,76 +294,6 @@ public class Lebenslauf {
     }
 
     /**
-     * Diese Methode macht aus einer HashMap einen String
-     * @param hm ist die zu Übergebende HashMap
-     * @param <K> K ist das key Objekt der HashMap
-     * @param <V> V ist dsa Value Objekt der HashMap
-     * @return wird ein String, der die HashMap beschreibt
-     */
-    @SuppressWarnings("SuspiciousMethodCalls")
-    public static <K, V> String hashMapToString(HashMap<K,V> hm) {
-        Iterator<K> it = hm.keySet().iterator();
-        StringBuilder s = new StringBuilder();
-        while (it.hasNext()) {
-            Object key = it.next();
-            s.append(key).append(": ").append(hm.get(key)).append("\n");
-        }
-        return s.substring(0,s.length()-1);
-    }
-
-    /**
-     * Diese Methode fügt ein Enter in einen zu langen String hinzu und handelt dabei auch das tabbing.
-     * Dabei wird erst ein Enter hinzugefügt wenn der String die oben angegebene MAXLINELENGTH überschreitet.
-     * Wenn moeglich bei einem Leerzeichen, sonst wird ein Wort geteilt.
-     * @param s Der String welcher in lines getrennt werden soll
-     * @param space Der Platz vor dem String s
-     * @param nlSpace Der Tab in der nächsten Zeile
-     * @return wird der String mit Enters und Tabs
-     */
-    public static String newLine(String s, int space, int nlSpace) {
-        String s1 = s;
-        String s2 = "";
-        if (s.length()+space > MAXLINELENGTH){
-            int lastSpace = 420;
-            for(int i = 0; i<s.length() && i< MAXLINELENGTH -space; i++ ) if(s.charAt(i) == ' ') lastSpace = i;
-            if (lastSpace != 420) {
-                s1 = s.substring(0, lastSpace) + "\n";
-                s2 = getSpace(nlSpace) + s.substring(lastSpace+1);
-            }
-            else {
-                s1 = s.substring(0, MAXLINELENGTH - 1 - space) + "-\n";
-                s2 = getSpace(nlSpace) + s.substring(MAXLINELENGTH - space);
-            }
-        }
-        if (s2.length() > MAXLINELENGTH) s2 = newLine(s2, nlSpace, nlSpace);
-        return (s1 + s2);
-    }
-
-    public static String newLine(String s, int space) {return newLine(s,space,space);}
-
-    /**
-     * Diese Methode erstellt aus einer int ein String mit Leerzeichen, in der Laenge des ints.
-     * @param len gibt die endgueltige laenge des Strings an
-     * @return gibt den String in der laenge des ints zurueck
-     */
-    public static String getSpace(int len) {
-        char[] chars = new char[len];
-        Arrays.fill(chars, ' ');
-        return new String(chars);
-    }
-
-    /**
-     * Diese Methode handelt auch tabbing, diese fuegt zu Enters allerdings 'nur' ein tab hinzu
-     * @param s beschreibt den String der getabbt werden soll
-     * @param len beschreibt die laenge des Strings
-     * @return wird der String s mit tabs
-     */
-    public static String addSpace(String s, int len) {
-        String space = getSpace(len);
-        return s.replace("\n", "\n"+space);
-    }
-
-    /**
      * Diese Methode gibt dem User 2 Optionen:
      * A) Die Applikation zu schließen
      * B) ein .txt aus der Consolen Ausgabe zu erstellen
@@ -588,7 +314,7 @@ public class Lebenslauf {
             if (s.charAt(0) == 'x') open = false;
             else if (s.charAt(0) == 'p') {
                 System.out.println("Der Lebenslauf ist unter 'Lebenslauf_Nicolas_Mahn.txt' zu finden");
-                System.out.println("Dieses Fenster schlie\u00DFt sich dabei...");
+                System.out.println("Dieses Fenster schlie\u00DFt sich jetzt...");
                 try {TimeUnit.SECONDS.sleep(1);} catch (InterruptedException e) {e.printStackTrace();}
                 open = false;
                 makeTxt();
@@ -596,126 +322,3 @@ public class Lebenslauf {
         }
     }
 }
-
-/**
- * Diese Klasse ist die Vaterklasse aller spezifischen Tuple also tuple mit einer definierten Laenge
- */
-class Tuple {
-    public Object getFirst(){return null;}
-    public Object getSecond(){return null;}
-    public Object getThird(){return null;}
-    public Object getFourth(){return null;}
-    public Object getFifth(){return null;}
-    public Object getSixth(){return null;}
-    public Object getSeventh(){return null;}
-    public Object getEighth(){return null;}
-    public Object getNinth(){return null;}
-    public Object getTenth(){return null;}
-    public Object getEleventh(){return null;}
-    public Object getTwelfth(){return null;}
-    public Object getThirteenth(){return null;}
-    public Object getFourteenth(){return null;}
-    public Object getFifteenth(){return null;}
-    public Object getSixteenth(){return null;}
-    public Object getSeventeenth(){return null;}
-    public Object getEighteenth(){return null;}
-    public Object getNineteenth(){return null;}
-    public Object getTwentieth(){return null;}
-}
-
-/**
- * Diese Klasse kann 3 unterschiedliche Objekte in einem, diesem, Objekt speichern
- */
-class Tuple3<A, B, C>  extends  Tuple {
-    public A first; public B second; public C third;
-
-    public Tuple3(A first, B second, C third){
-        this.first = first; this.second = second; this.third = third;
-    }
-
-    public A getFirst() {return first;}
-    public B getSecond() {return second;}
-    public C getThird() {return third;}
-}
-
-/**
- * Diese Klasse kann 4 unterschiedliche Objekte in einem, diesem, Objekt speichern
- */
-class Tuple4<A, B, C, D>  extends  Tuple  {
-    public A first; public B second; public C third; public D fourth;
-
-    public Tuple4(A first, B second, C third, D fourth){
-        this.first = first; this.second = second; this.third = third; this.fourth = fourth;
-    }
-
-    public A getFirst() {return first;}
-    public B getSecond() {return second;}
-    public C getThird() {return third;}
-    public D getFourth() {return fourth;}
-}
-
-/**
- * Diese Klasse kann 9 unterschiedliche Objekte in einem, diesem, Objekt speichern
- */
-class Tuple9<A, B, C, D, E, F, G, H, I>  extends  Tuple  {
-    public A first; public B second; public C third; public D fourth; public E fifth; public F sixth; public G seventh;
-    public H eighth; public I ninth;
-
-    public Tuple9(A first, B second, C third, D fourth, E fifth, F sixth, G seventh, H eighth, I ninth) {
-        this.first = first; this.second = second; this.third = third; this.fourth = fourth; this.fifth = fifth;
-        this.sixth = sixth; this.seventh = seventh; this.eighth = eighth; this.ninth = ninth;
-    }
-
-    public A getFirst() {return first;}
-    public B getSecond() {return second;}
-    public C getThird() {return third;}
-    public D getFourth() {return fourth;}
-    public E getFifth() {return fifth;}
-    public F getSixth() {return sixth;}
-    public G getSeventh() {return seventh;}
-    public H getEighth() {return eighth;}
-    public I getNinth() {return ninth;}
-}
-
-/**
- * Diese Klasse kann 20 unterschiedliche Objekte in einem, diesem, Objekt speichern
- */
-class Tuple20<A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T>  extends  Tuple  {
-    public A first; public B second; public C third; public D fourth; public E fifth; public F sixth; public G seventh;
-    public H eighth; public I ninth; public J tenth; public K eleventh; public L twelfth; public M thirteenth;
-    public N fourteenth; public O fifteenth; public P sixteenth; public Q seventeenth; public R eighteenth;
-    public S nineteenth; public T twentieth;
-
-    public Tuple20(A first, B second, C third, D fourth, E fifth, F sixth, G seventh, H eighth, I ninth, J tenth,
-                   K eleventh, L twelfth, M thirteenth, N fourteenth, O fifteenth, P sixteenth, Q seventeenth,
-                   R eighteenth, S nineteenth, T twentieth) {
-        this.first = first; this.second = second; this.third = third; this.fourth = fourth; this.fifth = fifth;
-        this.sixth = sixth; this.seventh = seventh; this.eighth = eighth; this.ninth = ninth; this.tenth = tenth;
-        this.eleventh = eleventh; this.twelfth = twelfth; this.thirteenth = thirteenth; this.fourteenth = fourteenth;
-        this.fifteenth = fifteenth; this.sixteenth = sixteenth; this.seventeenth = seventeenth;
-        this.eighteenth = eighteenth; this.nineteenth = nineteenth; this.twentieth = twentieth;
-    }
-
-    public A getFirst() {return first;}
-    public B getSecond() {return second;}
-    public C getThird() {return third;}
-    public D getFourth() {return fourth;}
-    public E getFifth() {return fifth;}
-    public F getSixth() {return sixth;}
-    public G getSeventh() {return seventh;}
-    public H getEighth() {return eighth;}
-    public I getNinth() {return ninth;}
-    public J getTenth() {return tenth;}
-    public K getEleventh() {return eleventh;}
-    public L getTwelfth() {return twelfth;}
-    public M getThirteenth() {return thirteenth;}
-    public N getFourteenth() {return fourteenth;}
-    public O getFifteenth() {return fifteenth;}
-    public P getSixteenth() {return sixteenth;}
-    public Q getSeventeenth() {return seventeenth;}
-    public R getEighteenth() {return eighteenth;}
-    public S getNineteenth() {return nineteenth;}
-    public T getTwentieth() {return twentieth;}
-}
-
-

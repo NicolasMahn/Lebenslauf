@@ -1,8 +1,12 @@
+package tuple;
+
+import tuple.Tuple;
+
 /**
  * @author NicolasMahn
  * Diese Klasse kann 20 unterschiedliche Objekte in einem, diesem, Objekt speichern
  */
-class Tuple20<A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T>  extends  Tuple  {
+public class Tuple20<A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T>  extends Tuple {
     public A first; public B second; public C third; public D fourth; public E fifth; public F sixth; public G seventh;
     public H eighth; public I ninth; public J tenth; public K eleventh; public L twelfth; public M thirteenth;
     public N fourteenth; public O fifteenth; public P sixteenth; public Q seventeenth; public R eighteenth;

@@ -1,8 +1,10 @@
+package tuple;
+
 /**
  * @author NicolasMahn
- * Diese Klasse ist die Vaterklasse aller spezifischen Tuple also tuple mit einer definierten Laenge
+ * Diese Klasse ist die Vaterklasse aller spezifischen tuple.Tuple also tuple mit einer definierten Laenge
  */
-class Tuple {
+public class Tuple {
     public Object getFirst(){return null;}
     public Object getSecond(){return null;}
     public Object getThird(){return null;}
