@@ -1,20 +1,22 @@
+package utils;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 
 /**
  * @author NicolasMahn
- * In dieser Klasse werden hilfreiche Methoden definiert, welche
+ * Helpful methods are defined in this class
  */
 public class Utils {
     static final int MAXLINELENGTH = 80;
 
     /**
-     * Diese Methode macht aus einer HashMap einen String
-     * @param hm ist die zu Übergebende HashMap
-     * @param <K> K ist das key Objekt der HashMap
-     * @param <V> V ist dsa Value Objekt der HashMap
-     * @return wird ein String, der die HashMap beschreibt
+     * This method turns a HashMap into a String
+     * @param hm represents the transferred HashMap
+     * @param <K> K is the key object of the HashMap
+     * @param <V> V is the value object of the HashMap
+     * @return A String describing the HashMap is returned
      */
     @SuppressWarnings("SuspiciousMethodCalls")
     public static <K, V> String hashMapToString(HashMap<K,V> hm) {
@@ -28,13 +30,13 @@ public class Utils {
     }
 
     /**
-     * Diese Methode fügt ein Enter in einen zu langen String hinzu und handelt dabei auch das tabbing.
-     * Dabei wird erst ein Enter hinzugefügt wenn der String die oben angegebene MAXLINELENGTH überschreitet.
-     * Wenn moeglich bei einem Leerzeichen, sonst wird ein Wort geteilt.
-     * @param s Der String welcher in lines getrennt werden soll
-     * @param space Der Platz vor dem String s
-     * @param nlSpace Der Tab in der nächsten Zeile
-     * @return wird der String mit Enters und Tabs
+     * This method adds an Enters into a string that is too long. It also handles the tabbing.
+     * An Enter is only added when the string exceeds the MAXLINELENGTH specified above.
+     * If possible at a space, otherwise a word is split.
+     * @param s the String which might be seperated into lines
+     * @param space the space in front of the String s
+     * @param nlSpace the tab for the next line
+     * @return the String is returned with enters
      */
     public static String newLine(String s, int space, int nlSpace) {
         String s1 = s;
@@ -58,9 +60,9 @@ public class Utils {
     public static String newLine(String s, int space) {return newLine(s,space,space);}
 
     /**
-     * Diese Methode erstellt aus einer int ein String mit Leerzeichen, in der Laenge des ints.
-     * @param len gibt die endgueltige laenge des Strings an
-     * @return gibt den String in der laenge des ints zurueck
+     * This method converts an int to a string of spaces, at the length of the int.
+     * @param len defines the length of the return String
+     * @return returns a String in the length of len
      */
     public static String getSpace(int len) {
         char[] chars = new char[len];
@@ -69,21 +71,9 @@ public class Utils {
     }
 
     /**
-     * Diese Methode handelt auch tabbing, diese fuegt zu Enters allerdings 'nur' ein tab hinzu
-     * @param s beschreibt den String der getabbt werden soll
-     * @param len beschreibt die laenge des Strings
-     * @return wird der String s mit tabs
-     */
-    public static String addSpace(String s, int len) {
-        String space = getSpace(len);
-        return s.replace("\n", "\n"+space);
-    }
-
-    /**
-     * Diese Methode schreibt eine Linie Aenlich wie man hr aus html kennt
+     * This method writes a line similar to what one might know from html
      */
     public static void hr() {
         for (int i = 0; i < MAXLINELENGTH; i++) System.out.print('-');
     }
-
 }

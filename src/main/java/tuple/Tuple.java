@@ -2,7 +2,7 @@ package tuple;
 
 /**
  * @author NicolasMahn
- * Diese Klasse ist die Vaterklasse aller spezifischen tuple.Tuple also tuple mit einer definierten Laenge
+ * This class is the parent class of all specific tuple. A tuple is a Object holding several other Objects
  */
 public class Tuple {
     public Object getFirst(){return null;}

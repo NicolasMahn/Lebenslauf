@@ -1,0 +1,135 @@
+ # CV
+--------------------------------------------------------------------------------
+This CV was provided to you by: https://github.com/NicolasMahn/Lebenslauf
+--------------------------------------------------------------------------------
+ ## Personal Data
+
+E-Mail: Nicolas.Mahn@gmx.de
+Address: Untere Brandstraße 62, 70567 Stuttgart, Germany
+Tel.: 015206501315
+Born: 2000-08-07 in Stuttgart
+Name: Nicolas Mahn
+
+
+--------------------------------------------------------------------------------
+ ## Educational Path
+
+Business Informatics: Since 09.2019
+                      Hochschule Furtwangen (HFU) in Furtwangen im Schwarzwald
+                      degree: prospectively Bachelor of Science in the year 2023
+                      special Interests: Machine Learning, Data Science and
+                      Software-Development
+
+Workstudent: From the 01.11.2021-31.03.2022
+             DB Systel
+
+Internship: From the 01.04.2021-30.09.2021
+            DB Netz AG
+            in the department Digital Rail Germany.
+
+High School: Up to 2018
+             at the Königin-Charlotte-Gymnasium in Stuttgart
+             degree: Abitur
+             bilingual path
+
+
+--------------------------------------------------------------------------------
+ ## Studies
+
+assignment about Cyber Physical Hacks
+          2 semester
+
+assignment about Make-or-Buy process analysis with business process design
+          languages
+          2 semester
+
+assignment about Assembler and system architecture
+          2 semester
+
+project about Development of an algorithm for route finding of e-trucks in Java
+          (application layer), MongoDB (data management layer) and
+          PHP/JS (presentation layer)
+          3 semester
+
+project about Business Intelligence 1: Big data analytics project with Spark
+          GitHub link: https://github.com/1Zero64/BusinessIntelligence
+          5 semester
+
+project about Business Intelligence 2: Machine learning project with R
+          GitHub link: https://github.com/NicolasMahn/BusinessIntelligence2
+          5 semester
+
+assignment about decentralized Finance (DeFi)
+          5 semester
+
+project about Development of an intelligent packet management system in Python,
+          using a TSP algorithm
+          GitHub link: https://github.com/NicolasMahn/IntPakman
+          5 semester
+
+market analysis about the city map branch was carried out for a company, at the
+          Institute for Business Consulting (IBC) a student
+          management consultancy
+          1 semester
+
+
+--------------------------------------------------------------------------------
+ ## Stays Abroad
+
+In Sion Mills, Northern Ireland from 03.2009 to 07.2009
+                                Attended Sion Mills Primary School
+
+In Lyon, France from 03.2013 to 07.2013
+                Attended Collège Charles de Foucault
+
+In Kampala, Uganda from 08.2018 to 08.2019
+                   Substitute math and science teacher at Kawempe Youth
+                   Development Association Primary School
+                   and Makarere West Valley Primary School
+
+
+--------------------------------------------------------------------------------
+ ## Commitments and Leisure Activities
+
+German Scout Association Sankt Georg 
+01.2017 - 07.2018 youth leader 
+Participation in aid projects in the Philippines and Palestine
+
+since the beginning of 2020 member of the business informatics student council 
+of the HFU
+
+Sport (fitness training, jogging)
+Computer Games (Minecraft, AOE)
+
+
+--------------------------------------------------------------------------------
+ ## Qualificationen
+
+
+ ### Foreign Languages:
+English        Own Rating: A
+French         Own Rating: B
+
+ ### Programming Languages:
+Java           Own Rating: A
+x86 Assembler  Own Rating: A
+Python         Own Rating: A
+SQL            Own Rating: B
+NoSQL
+Web Design     Own Rating: B
+GraphQL        Own Rating: C
+
+ ### Modeling Languages:
+UML            Own Rating: B
+BPMN           Own Rating: C
+Flowchart      Own Rating: C
+EPK            Own Rating: C
+
+ ### Other Qualifications:
+Microsoft Word
+LaTeX
+Microsoft Power Point
+Microsoft Excel
+Microsoft Teams
+Zoom
+SAP
