@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.concurrent.TimeUnit;
 
 /**
- * TODO
+ * This method executes the code
  */
 public class Main {
     static boolean open = true;
@@ -22,7 +22,7 @@ public class Main {
     }
 
     /**
-     * TODO
+     * In this methode the User can specify in what language he'd like the CV to be
      */
     public static void whatLanguage() {
         if (open) {
@@ -66,7 +66,7 @@ public class Main {
         print(CV.studies(), "Studies");
         print(CV.staysAbroad(), "Stays Abroad");
         print(CV.commitmentlLeisure(), "Commitments and Leisure Activities");
-        print(CV.qualifications(), "Qualificationen");
+        print(CV.qualifications(), "Qualifications");
         menu();
     }
 
@@ -81,8 +81,7 @@ public class Main {
     }
 
     /**
-     * Diese Methode schreibt die Ueberschrift
-     * TODO
+     * This methode writes the headline
      */
     public static void headline() {
         System.out.println(" # CV");
@@ -92,8 +91,7 @@ public class Main {
     }
 
     /**
-     * diese Methode erstellt das Lebenslauf_Nicolas_Mahn.txt
-     * TODO
+     * This methode creates a .txt CV or Lebenslauf
      */
     public static void makeTxt(String fileName) {
         File file = new File(fileName);
@@ -108,15 +106,14 @@ public class Main {
     }
 
     /**
-     * In dieser Methode werden die Datenpunkte des Lebenslaufs geschrieben
-     * @param obj Das Objekt, welches die Daten beinhaltet
-     * @param ueberschrift Ist die unterüberschrift
-     *                     TODO
+     * This Method prints the CV
+     * @param obj The object which vontains data
+     * @param headline the headline of the data
      */
-    public static void print(Object obj, String ueberschrift) {
+    public static void print(Object obj, String headline) {
         System.out.println();
         Utils.hr();
-        System.out.println("\n ## " + ueberschrift + "\n");
+        System.out.println("\n ## " + headline + "\n");
 
         String klasse = obj.getClass().toString();
         if (!klasse.contains("Tuple")) System.out.println(obj + "\n");
@@ -130,10 +127,9 @@ public class Main {
     }
 
     /**
-     * Diese Methode schreibt alle Objekte die in einem tuple.Tuple gespeichert sind
-     * @param tuple des tuple.Tuple Objekt, welches ausgedruckt werden soll
-     * @param num gibt die groesse des Tuples an
-     *            TODO
+     * This method writes all objects stored in a tuple
+     * @param tuple the tuple object contains the objects in which data is stored
+     * @param num defines the size of the tuple
      */
     public static void printTuple(Tuple tuple, int num) {
         System.out.println(tuple.getFirst());
@@ -163,10 +159,9 @@ public class Main {
     }
 
     /**
-     * Diese Methode gibt dem User 2 Optionen:
-     * A) Die Applikation zu schließen
-     * B) ein .txt aus der Consolen Ausgabe zu erstellen
-     * TODO
+     * This methode offers the User with two options:
+     * A) to close this application
+     * B) To create a .txt CV
      */
     public static void menu() {
         if (open) {
