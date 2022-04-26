@@ -1,4 +1,4 @@
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -167,7 +167,7 @@ public class Main {
             if (lang == Languages.de) pdf.setDefaultPageSize(new PageSize(595f, 1860f));
             else pdf.setDefaultPageSize(new PageSize(595f, 1830f));
             Document doc = new Document(pdf);
-            PdfFont font = PdfFontFactory.createFont(FontConstants.COURIER);
+            PdfFont font = PdfFontFactory.createFont(StandardFonts.COURIER);
 
             for (String line : cv.split("\\n")) {
                 if (line.contains("https://")) {
