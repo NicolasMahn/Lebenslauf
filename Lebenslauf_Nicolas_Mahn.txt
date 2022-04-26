@@ -1,19 +1,19 @@
- # Lebenslauf
+# Lebenslauf
 --------------------------------------------------------------------------------
 Dieser Lebenslauf wurde Ihnen bereitgestellt von:
 https://github.com/NicolasMahn/Lebenslauf
 --------------------------------------------------------------------------------
- ## persönliche Daten
+## persönliche Daten
 
 Adresse: Untere Brandstraße 62, 70567 Stuttgart
 E-Mail: Nicolas.Mahn@gmx.de
 Tel.: 015206501315
-Geboren: 2000-08-07 in Stuttgart
+Geboren: 07.08.2000 in Stuttgart
 Name: Nicolas Mahn
 
 
 --------------------------------------------------------------------------------
- ## Bildungsweg
+## Bildungsweg
 
 Wirtschaftsinformatik Studium: Seit 09.2019
                                Hochschule Furtwangen (HFU) in Furtwangen im
@@ -37,7 +37,7 @@ Gymnasium: Bis 2018
 
 
 --------------------------------------------------------------------------------
- ## Studium
+## Studium
 
 Wissenschaftliche Arbeit über Cyber Physical Hacks
           2 Semester
@@ -76,7 +76,7 @@ Marktanalyse über die Stadtkartenbranche wurde für ein Unternehmen
 
 
 --------------------------------------------------------------------------------
- ## Auslandsaufenthalte
+## Auslandsaufenthalte
 
 In Sion Mills, Nordirland vom 03.2009 bis 07.2009
                           Besuch der Sion Mills Primary School
@@ -91,7 +91,7 @@ In Kampala, Uganda vom 08.2018 bis 08.2019
 
 
 --------------------------------------------------------------------------------
- ## Engagement und Freizeit
+## Engagement und Freizeit
 
 Deutsche Pfadfinderschaft Sankt Georg 
 01.2017 - 07.2018 Jugendleiter 
@@ -105,29 +105,29 @@ Computerspiele (Minecraft, AOE)
 
 
 --------------------------------------------------------------------------------
- ## Qualifikationen
+## Qualifikationen
 
 
- ### Fremdsprachen:
+### Fremdsprachen:
 Englisch       Eigene Bewertung: sehr gut
 Französisch    Eigene Bewertung: gut
 
- ### Programmiersprachen:
+### Programmiersprachen:
 Java           Eigene Bewertung: sehr gut
 x86 Assembler  Eigene Bewertung: sehr gut
 Python         Eigene Bewertung: sehr gut
 SQL            Eigene Bewertung: gut
-NoSQL
+NoSQL          Eigene Bewertung: gut
 Webdesign      Eigene Bewertung: gut
 GraphQL        Eigene Bewertung: befriedigend
 
- ### Modellierungssprachen:
+### Modellierungssprachen:
 UML            Eigene Bewertung: gut
 BPMN           Eigene Bewertung: befriedigend
 Flowchart      Eigene Bewertung: befriedigend
 EPK            Eigene Bewertung: befriedigend
 
- ### Andere Qualifikationen:
+### Andere Qualifikationen:
 Microsoft Word
 LaTeX
 Microsoft Power Point

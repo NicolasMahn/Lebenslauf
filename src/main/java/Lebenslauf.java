@@ -23,7 +23,7 @@ public class Lebenslauf {
             put("Adresse", "Untere Brandstra\u00DFe 62, 70567 Stuttgart");
             put("E-Mail", "Nicolas.Mahn@gmx.de");
             put("Tel.", "015206501315");
-            put("Geboren", "2000-08-07 in Stuttgart");}};
+            put("Geboren", "07.08.2000 in Stuttgart");}};
         return Utils.hashMapToString(persInfo);
     }
 
@@ -154,7 +154,7 @@ public class Lebenslauf {
         Qualification x86 = new Qualification(Qualification.MainTopic.pl,"x86 Assembler", 1, DE);
         Qualification py = new Qualification(Qualification.MainTopic.pl,"Python",  1, DE);
         Qualification sql = new Qualification(Qualification.MainTopic.pl,"SQL", 2, DE);
-        Qualification noSql = new Qualification(Qualification.MainTopic.pl,"NoSQL", DE);
+        Qualification noSql = new Qualification(Qualification.MainTopic.pl,"NoSQL", 2, DE);
         Qualification wd = new Qualification(Qualification.MainTopic.pl,"Webdesign", 2, DE);
         Qualification gql = new Qualification(Qualification.MainTopic.pl,"GraphQL", 3, DE);
 

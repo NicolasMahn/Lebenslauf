@@ -21,7 +21,7 @@ static Languages EN = Languages.en;
             put("Address", "Untere Brandstra\u00DFe 62, 70567 Stuttgart, Germany");
             put("E-Mail", "Nicolas.Mahn@gmx.de");
             put("Tel.", "015206501315");
-            put("Born", "2000-08-07 in Stuttgart");}};
+            put("Born", "07.08.2000 in Stuttgart");}};
         return Utils.hashMapToString(persInfo);
     }
 
@@ -38,7 +38,7 @@ static Languages EN = Languages.en;
                 "special Interests: Machine Learning, Data Science and Software-Development", EN);
 
         EducationalPath workStudent = new EducationalPath("01.11.2021", "31.03.2022",
-                "Workstudent",
+                "Student Trainee",
                 null,
                 "DB Systel",
                 null,
@@ -68,27 +68,27 @@ static Languages EN = Languages.en;
     public static Tuple9<Experience, Experience, Experience, Experience, Experience,
             Experience, Experience, Experience, Experience> studies() {
 
-        Experience cph = new Experience(2, "assignment",
+        Experience cph = new Experience(2, "Assignment",
                 "Cyber Physical Hacks", EN);
-        Experience pa = new Experience(2, "assignment",
+        Experience pa = new Experience(2, "Assignment",
                 "Make-or-Buy process analysis with business process design languages", EN);
-        Experience as = new Experience(2, "assignment",
+        Experience as = new Experience(2, "Assignment",
                 "Assembler and system architecture", EN);
-        Experience ear = new Experience(3, "project",
+        Experience ear = new Experience(3, "Project",
                 "Development of an algorithm for route finding of e-trucks in Java (application layer), " +
                         "MongoDB (data management layer) and PHP/JS (presentation layer)", EN);
-        Experience bi1 = new Experience(5, "project",
+        Experience bi1 = new Experience(5, "Project",
                 "Business Intelligence 1: Big data analytics project with Spark",
                 "https://github.com/1Zero64/BusinessIntelligence", EN);
-        Experience bi2 = new Experience(5, "project",
+        Experience bi2 = new Experience(5, "Project",
                 "Business Intelligence 2: Machine learning project with R",
                 "https://github.com/NicolasMahn/BusinessIntelligence2", EN);
-        Experience defi = new Experience(5, "assignment",
+        Experience defi = new Experience(5, "Assignment",
                 "decentralized Finance (DeFi)", EN);
-        Experience ipm = new Experience(5, "project",
+        Experience ipm = new Experience(5, "Project",
                 "Development of an intelligent packet management system in Python, using a TSP algorithm",
                 "https://github.com/NicolasMahn/IntPakman", EN);
-        Experience ma = new Experience(1, "market analysis",
+        Experience ma = new Experience(1, "Market analysis",
                 "the city map branch was carried out for a company, " +
                         "at the Institute for Business Consulting (IBC) a student management consultancy", EN);
 
@@ -149,7 +149,7 @@ static Languages EN = Languages.en;
         Qualification x86 = new Qualification(Qualification.MainTopic.pl,"x86 Assembler", 1, EN);
         Qualification py = new Qualification(Qualification.MainTopic.pl,"Python",  1, EN);
         Qualification sql = new Qualification(Qualification.MainTopic.pl,"SQL", 2, EN);
-        Qualification noSql = new Qualification(Qualification.MainTopic.pl,"NoSQL", EN);
+        Qualification noSql = new Qualification(Qualification.MainTopic.pl,"NoSQL", 2, EN);
         Qualification wd = new Qualification(Qualification.MainTopic.pl,"Web Design", 2, EN);
         Qualification gql = new Qualification(Qualification.MainTopic.pl,"GraphQL", 3, EN);
 

@@ -1,3 +1,16 @@
+import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.kernel.font.PdfFont;
+import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.geom.PageSize;
+import com.itextpdf.kernel.geom.Rectangle;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.annot.PdfLinkAnnotation;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Link;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Text;
+import com.itextpdf.kernel.pdf.action.PdfAction;
 import tuple.Tuple;
 import utils.Languages;
 import utils.Utils;
@@ -31,13 +44,16 @@ public class Main {
             System.out.println("\nIn german or english (de/EN)?");
             System.out.println("Auf Deutsch oder Englisch (de/EN)?");
         }
+
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         String s = "  ";
         try {
             s = in.readLine();
         } catch (IOException e) {
+            System.err.println("Oh, something went wrong....");
             e.printStackTrace();
         }
+
         if (s.toLowerCase().charAt(0) == 'd') lang = Languages.de;
         else lang = Languages.en;
     }
@@ -61,7 +77,7 @@ public class Main {
      */
     public static void makeCV() {
         headline();
-        print(CV.persoalData(), "Personal Data");
+        print(CV.persoalData(), "Personal Information");
         print(CV.education(), "Educational Path");
         print(CV.studies(), "Studies");
         print(CV.staysAbroad(), "Stays Abroad");
@@ -74,7 +90,7 @@ public class Main {
      * Diese Methode schreibt die Ueberschrift
      */
     public static void ueberschrift() {
-        System.out.println(" # Lebenslauf");
+        System.out.println("# Lebenslauf");
         Utils.hr();
         System.out.print(Utils.newLine("\nDieser Lebenslauf wurde Ihnen bereitgestellt von: " +
                 "https://github.com/NicolasMahn/Lebenslauf", 0));
@@ -84,9 +100,9 @@ public class Main {
      * This methode writes the headline
      */
     public static void headline() {
-        System.out.println(" # CV");
+        System.out.println("# CV");
         Utils.hr();
-        System.out.print(Utils.newLine("\nThis CV was provided to you by: " +
+        System.out.print(Utils.newLine("\nThis CV was provided by: " +
                 "https://github.com/NicolasMahn/Lebenslauf", 0));
     }
 
@@ -94,15 +110,125 @@ public class Main {
      * This methode creates a .txt CV or Lebenslauf
      */
     public static void makeTxt(String fileName) {
-        File file = new File(fileName);
-        FileOutputStream fos = null;
-        try {fos = new FileOutputStream(file);} catch (FileNotFoundException e) {e.printStackTrace();}
-        PrintStream ps = new PrintStream(fos);
-        System.setOut(ps);
-        if (lang == Languages.de) makeLebenslauf();
-        else makeCV();
-        ps.close();
-        try {fos.close();} catch (IOException e) {e.printStackTrace();}
+        try {
+            PrintStream ps_console = System.out;
+            FileOutputStream fos = new FileOutputStream(new File(fileName));
+            PrintStream ps = new PrintStream(fos);
+            System.setOut(ps);
+
+            if (lang == Languages.de) makeLebenslauf();
+            else makeCV();
+
+            ps.close();
+            fos.close();
+            System.setOut(ps_console);
+
+            if (lang == Languages.de) {
+                System.out.println("Der Lebenslauf wurde erstellt.");
+                System.out.println("Er ist unter 'Lebenslauf_Nicolas_Mahn.txt' zu finden");
+                TimeUnit.SECONDS.sleep(3);
+                System.out.println("\nDieses Fenster schlie\u00DFt sich jetzt...");
+
+            } else {
+                System.out.println("The CV has been created");
+                System.out.println("It can be found under 'CV_Nicolas_Mahn.txt'");
+                TimeUnit.SECONDS.sleep(3);
+                System.out.println("\nThis window will now close itself...");
+            }
+            TimeUnit.SECONDS.sleep(3);
+
+        } catch (InterruptedException | IOException e) {
+            System.err.println("Oh, something went wrong....");
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * This methode creates a .pdf CV or Lebenslauf
+     */
+    public static void makePdf(String fileName) {
+        try {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            PrintStream ps = new PrintStream(baos);
+            PrintStream ps_console = System.out;
+            System.setOut(ps);
+
+            if (lang == Languages.de) makeLebenslauf();
+            else makeCV();
+
+            System.out.flush();
+            System.setOut(ps_console);
+            ps.close();
+
+            String cv = baos.toString();
+
+            PdfWriter writer = new PdfWriter(fileName);
+            PdfDocument pdf = new PdfDocument(writer);
+            if (lang == Languages.de) pdf.setDefaultPageSize(new PageSize(595f, 1860f));
+            else pdf.setDefaultPageSize(new PageSize(595f, 1830f));
+            Document doc = new Document(pdf);
+            PdfFont font = PdfFontFactory.createFont(FontConstants.COURIER);
+
+            for (String line : cv.split("\\n")) {
+                if (line.contains("https://")) {
+                    String[] arr = line.split("https://");
+                    String beforeLink = arr[0];
+                    String tempSLink = "https://";
+                    String tempBehindLink = "";
+                    if (arr[1].contains(" ")) { //Links are not allowed to have spaces
+                        tempSLink += arr[1].substring(0, arr[1].charAt(' '));
+                        tempBehindLink = arr[1].substring(arr[1].charAt(' '));
+                    } else tempSLink += arr[1];
+                    String sLink = tempSLink;
+                    String behindLink = tempBehindLink;
+                    Link link = new Link(sLink, new PdfLinkAnnotation(new Rectangle(0, 0)) {{
+                        setAction(PdfAction.createURI(sLink));
+                    }}){{
+                        setFont(font);
+                        setFontSize(10.8f);
+                    }};
+                    doc.add(new Paragraph() {{
+                        add(new Text("\u00AD" + beforeLink) {{
+                            setFont(font);
+                            setFontSize(10.8f);
+                        }});
+                        add(link.setUnderline() );
+                        add(new Text(behindLink) {{
+                            setFont(font);
+                            setFontSize(10.8f);
+                        }});
+                        setMultipliedLeading(0.0f);
+                    }});
+                } else {
+                    doc.add(new Paragraph() {{
+                        add(new Text("\u00AD" + line) {{
+                            setFont(font);
+                            setFontSize(10.8f);
+                        }});
+                        setMultipliedLeading(0.0f);
+                    }});
+                }
+            }
+            doc.close();
+
+            if (lang == Languages.de) {
+                System.out.println("Der Lebenslauf wurde erstellt.");
+                System.out.println("Er ist unter 'Lebenslauf_Nicolas_Mahn.pdf' zu finden");
+                TimeUnit.SECONDS.sleep(3);
+                System.out.println("\nDieses Fenster schlie\u00DFt sich jetzt...");
+
+            } else {
+                System.out.println("The CV has been created");
+                System.out.println("It can be found under 'CV_Nicolas_Mahn.pdf'");
+                TimeUnit.SECONDS.sleep(3);
+                System.out.println("\nThis window will now close itself...");
+            }
+            TimeUnit.SECONDS.sleep(3);
+
+        } catch (Exception e) {
+            System.err.println("Oh, something went wrong....");
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -113,15 +239,15 @@ public class Main {
     public static void print(Object obj, String headline) {
         System.out.println();
         Utils.hr();
-        System.out.println("\n ## " + headline + "\n");
+        System.out.println("\n## " + headline + "\n");
 
-        String klasse = obj.getClass().toString();
-        if (!klasse.contains("Tuple")) System.out.println(obj + "\n");
+        String cl = obj.getClass().toString();
+        if (!cl.contains("Tuple")) System.out.println(obj + "\n");
         else {
             int num;
-            if (Character.isDigit(klasse.charAt(klasse.length() - 2)))
-                num = Integer.parseInt(klasse.substring(klasse.length() - 2)) * 10;
-            else num = Integer.parseInt(klasse.substring(klasse.length() - 1));
+            if (Character.isDigit(cl.charAt(cl.length() - 2)))
+                num = Integer.parseInt(cl.substring(cl.length() - 2)) * 10;
+            else num = Integer.parseInt(cl.substring(cl.length() - 1));
             printTuple((Tuple) obj, num);
         }
     }
@@ -167,44 +293,31 @@ public class Main {
         if (open) {
             if (lang == Languages.de) {
                 System.out.println("\n\nDr\u00FCcke 'x' um dieses Fenster zu schlie\u00DFen");
-                System.out.println("Dr\u00FCcke 'p' um diesen Lebenslauf in eine .txt zu drucken");
+                System.out.println("Dr\u00FCcke 'p' um diesen Lebenslauf in eine pdf Datei zu drucken");
             } else {
                 System.out.println("\n\nPress 'x' to close this window");
-                System.out.println("Press 'p' to print the CV into a .txt ");
+                System.out.println("Press 'p' to print the CV into a pdf file ");
             }
         }
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         while(open) {
-            String s = "";
+            String s = "  ";
             try {
                 s = in.readLine();
             } catch (IOException e) {
+                System.err.println("Oh, something went wrong....");
                 e.printStackTrace();
             }
             if (s.toLowerCase().charAt(0) == 'x') open = false;
             else if (s.toLowerCase().charAt(0) == 'p') {
-                if (lang == Languages.de) {
-                    System.out.println("Der Lebenslauf ist unter 'Lebenslauf_Nicolas_Mahn.txt' zu finden");
-                    System.out.println("Dieses Fenster schlie\u00DFt sich jetzt...");
-                    try {
-                        TimeUnit.SECONDS.sleep(1);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    open = false;
-                    makeTxt("Lebenslauf_Nicolas_Mahn.txt");
-                } else {
-                    System.out.println("The CV can be found under 'CV_Nicolas_Mahn.txt'");
-                    System.out.println("This window will now close itself...");
-                    try {
-                        TimeUnit.SECONDS.sleep(1);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    open = false;
-                    makeTxt("CV_Nicolas_Mahn.txt");
-                }
-
+                open = false;
+                if (lang == Languages.de) makePdf("Lebenslauf_Nicolas_Mahn.pdf");
+                else makePdf("CV_Nicolas_Mahn.pdf");
+            }
+            else if (s.toLowerCase().charAt(0) == 't') {
+                open = false;
+                if (lang == Languages.de) makeTxt("Lebenslauf_Nicolas_Mahn.txt");
+                else makeTxt("CV_Nicolas_Mahn.txt");
             }
         }
     }

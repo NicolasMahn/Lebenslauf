@@ -62,15 +62,15 @@ public class Qualification {
         if (prev != mainTopic) {
             if (prev != null) s += "\n";
             if (language == Languages.de) {
-                if (mainTopic == MainTopic.fl) s += " ### Fremdsprachen:\n";
-                if (mainTopic == MainTopic.pl) s += " ### Programmiersprachen:\n";
-                if (mainTopic == MainTopic.ml) s += " ### Modellierungssprachen:\n";
-                if (mainTopic == MainTopic.oq) s += " ### Andere Qualifikationen:\n";
+                if (mainTopic == MainTopic.fl) s += "### Fremdsprachen:\n";
+                if (mainTopic == MainTopic.pl) s += "### Programmiersprachen:\n";
+                if (mainTopic == MainTopic.ml) s += "### Modellierungssprachen:\n";
+                if (mainTopic == MainTopic.oq) s += "### Andere Qualifikationen:\n";
             } else {
-                if (mainTopic == MainTopic.fl) s += " ### Foreign Languages:\n";
-                if (mainTopic == MainTopic.pl) s += " ### Programming Languages:\n";
-                if (mainTopic == MainTopic.ml) s += " ### Modeling Languages:\n";
-                if (mainTopic == MainTopic.oq) s += " ### Other Qualifications:\n";
+                if (mainTopic == MainTopic.fl) s += "### Foreign Languages:\n";
+                if (mainTopic == MainTopic.pl) s += "### Programming Languages:\n";
+                if (mainTopic == MainTopic.ml) s += "### Modeling Languages:\n";
+                if (mainTopic == MainTopic.oq) s += "### Other Qualifications:\n";
             }
             prev = mainTopic;
         }
