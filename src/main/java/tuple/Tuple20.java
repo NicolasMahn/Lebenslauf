@@ -9,6 +9,7 @@ public class Tuple20<A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T>
     public H eighth; public I ninth; public J tenth; public K eleventh; public L twelfth; public M thirteenth;
     public N fourteenth; public O fifteenth; public P sixteenth; public Q seventeenth; public R eighteenth;
     public S nineteenth; public T twentieth;
+    private final int LENGTH = 20;
 
     public Tuple20(A first, B second, C third, D fourth, E fifth, F sixth, G seventh, H eighth, I ninth, J tenth,
                    K eleventh, L twelfth, M thirteenth, N fourteenth, O fifteenth, P sixteenth, Q seventeenth,
@@ -18,6 +19,10 @@ public class Tuple20<A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T>
         this.eleventh = eleventh; this.twelfth = twelfth; this.thirteenth = thirteenth; this.fourteenth = fourteenth;
         this.fifteenth = fifteenth; this.sixteenth = sixteenth; this.seventeenth = seventeenth;
         this.eighteenth = eighteenth; this.nineteenth = nineteenth; this.twentieth = twentieth;
+    }
+
+    public int length() {
+        return LENGTH;
     }
 
     public A getFirst() {return first;}

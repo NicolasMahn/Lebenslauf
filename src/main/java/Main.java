@@ -90,7 +90,7 @@ public class Main {
      * Diese Methode schreibt die Ueberschrift
      */
     public static void ueberschrift() {
-        System.out.println("# Lebenslauf");
+        System.out.println("\n\n\n# Lebenslauf");
         Utils.hr();
         System.out.print(Utils.newLine("\nDieser Lebenslauf wurde Ihnen bereitgestellt von: " +
                 "https://github.com/NicolasMahn/Lebenslauf", 0));
@@ -100,7 +100,7 @@ public class Main {
      * This methode writes the headline
      */
     public static void headline() {
-        System.out.println("# CV");
+        System.out.println("\n\n\n# CV");
         Utils.hr();
         System.out.print(Utils.newLine("\nThis CV was provided by: " +
                 "https://github.com/NicolasMahn/Lebenslauf", 0));
@@ -244,44 +244,16 @@ public class Main {
         String cl = obj.getClass().toString();
         if (!cl.contains("Tuple")) System.out.println(obj + "\n");
         else {
-            int num;
-            if (Character.isDigit(cl.charAt(cl.length() - 2)))
-                num = Integer.parseInt(cl.substring(cl.length() - 2)) * 10;
-            else num = Integer.parseInt(cl.substring(cl.length() - 1));
-            printTuple((Tuple) obj, num);
+            printTuple((Tuple) obj);
         }
     }
 
     /**
      * This method writes all objects stored in a tuple
      * @param tuple the tuple object contains the objects in which data is stored
-     * @param num defines the size of the tuple
      */
-    public static void printTuple(Tuple tuple, int num) {
-        System.out.println(tuple.getFirst());
-        System.out.println(tuple.getSecond());
-        System.out.println(tuple.getThird());
-        if (num > 3) {
-            System.out.println(tuple.getFourth());
-        } if (num > 4) {
-            System.out.println(tuple.getFifth());
-            System.out.println(tuple.getSixth());
-            System.out.println(tuple.getSeventh());
-            System.out.println(tuple.getEighth());
-            System.out.println(tuple.getNinth());
-        } if (num > 9) {
-            System.out.println(tuple.getTenth());
-            System.out.println(tuple.getEleventh());
-            System.out.println(tuple.getTwelfth());
-            System.out.println(tuple.getThirteenth());
-            System.out.println(tuple.getFourteenth());
-            System.out.println(tuple.getFifteenth());
-            System.out.println(tuple.getSixteenth());
-            System.out.println(tuple.getSeventeenth());
-            System.out.println(tuple.getEighteenth());
-            System.out.println(tuple.getNineteenth());
-            System.out.println(tuple.getTwentieth());
-        }
+    public static void printTuple(Tuple tuple) {
+        while(tuple.hasnext()) System.out.println(tuple.getnext());
     }
 
     /**

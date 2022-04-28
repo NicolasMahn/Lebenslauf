@@ -6,9 +6,14 @@ package tuple;
  */
 public class Tuple3<A, B, C>  extends Tuple {
     public A first; public B second; public C third;
+    private final int LENGTH = 3;
 
     public Tuple3(A first, B second, C third){
         this.first = first; this.second = second; this.third = third;
+    }
+
+    public int length() {
+        return LENGTH;
     }
 
     public A getFirst() {return first;}
