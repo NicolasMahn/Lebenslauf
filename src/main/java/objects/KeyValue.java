@@ -1,9 +1,10 @@
 package objects;
 
 /**
- * TODO
- * @param <K>
- * @param <V>
+ * Thsi can be looked at as a simple one item map
+ * @author NicolasMahn
+ * @param <K> the key class
+ * @param <V> the value class
  */
 public class KeyValue<K, V> {
     K k;

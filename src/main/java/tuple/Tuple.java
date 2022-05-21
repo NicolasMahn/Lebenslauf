@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * @author NicolasMahn
  * This class is the parent class of all specific tuple. A tuple is a Object holding several other Objects
+ * It can also save a healine for the tuple, with if saved with a hirarchy will be printed with the Tuple
  */
 public class Tuple {
     private String headline = null;
@@ -43,10 +44,6 @@ public class Tuple {
 
     public int length(){return LENGTH;}
 
-    /**
-     * TODO
-     * @return
-     */
     @Override
     public String toString() {
         String s = "";
@@ -119,11 +116,6 @@ public class Tuple {
         return null;
     }
 
-    /**
-     * TODO
-     * @param list
-     * @return
-     */
     public static Tuple createTupleFromList(List<Object> list) {
         int size = list.size();
         switch(size){

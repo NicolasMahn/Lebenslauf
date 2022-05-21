@@ -8,13 +8,17 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * This class reads and can save cv jsons
+ * @author NicolasMahn
+ */
 public class Json {
     static Language language = null;
 
     /**
-     * TODO
+     * This Method reads the json and then makes objects from it in a given pattern
      * @param filename
-     * @return
+     * @return Tuple of all Objects
      */
     public static Tuple readCV(String filename) {
         ObjectMapper jsonMapper = new ObjectMapper();
@@ -31,9 +35,9 @@ public class Json {
     }
 
     /**
-     * TODO
+     * This Method detects the class of an object an instructs the making of such an object
      * @param obj
-     * @return
+     * @return defined Object
      */
     private static Object makeObject(Object obj) {
 
@@ -63,9 +67,9 @@ public class Json {
     }
 
     /**
-     * TODO
+     * This Method makes Tuples from a json map
      * @param map
-     * @return
+     * @returns a Tuple Object
      */
     private static Tuple makeTuple(Map<String, Object> map) {
         List<Object> attributes = (List<Object>) map.get("attributes");
@@ -82,8 +86,9 @@ public class Json {
     }
 
     /**
-     * TODO
+     * This Method makes KeyValues from a json map
      * @param map
+     * @return a KeyValue Object
      */
     private static KeyValue makeKeyValue(Map<String, Object> map) {
         ArrayList<Object> attributes = (ArrayList) map.get("attributes");
@@ -91,8 +96,9 @@ public class Json {
     }
 
     /**
-     * TODO
+     * This Method makes Activities from a json map
      * @param map
+     * @return an Activity Object
      */
     private static Activity makeActivity(Map<String, Object> map) {
         ArrayList<Object> attributes = (ArrayList) map.get("attributes");
@@ -107,8 +113,9 @@ public class Json {
     }
 
     /**
-     * TODO
+     * This Method makes Experiences from a json map
      * @param map
+     * @return an Experience Object
      */
     private static Experience makeExperience(Map<String, Object> map) {
         ArrayList<Object> attributes = (ArrayList) map.get("attributes");
@@ -122,8 +129,9 @@ public class Json {
     }
 
     /**
-     * TODO
+     * This Method makes Abroads from a json map
      * @param map
+     * @return an Abroad Object
      */
     private static Abroad makeAbroad(Map<String, Object> map) {
         ArrayList<Object> attributes = (ArrayList) map.get("attributes");
@@ -132,8 +140,9 @@ public class Json {
     }
 
     /**
-     * TODO
+     * This Method makes Skills from a json map
      * @param map
+     * @return a Skill Object
      */
     private static Skill makeSkill(Map<String, Object> map) {
         ArrayList<Object> attributes = (ArrayList) map.get("attributes");
@@ -147,8 +156,9 @@ public class Json {
     }
 
     /**
-     * TODO
+     * This Method makes Dates from a json map
      * @param map
+     * @return a Date Object
      */
     private static Date makeDate(Map<String, Object> map) {
         ArrayList<Integer> attributes = (ArrayList) map.get("attributes");

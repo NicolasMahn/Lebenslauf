@@ -28,9 +28,9 @@ public class Utils {
     }
 
     /**
-     * TODO
+     * This Method finds the Ordinal of a number
      * @param numb
-     * @return
+     * @return the Ordinal
      */
     public static String findOrdinal(int numb) {
         if ((numb-1)%10 == 0 && numb != 11) return "st";
@@ -90,6 +90,7 @@ public class Utils {
 
     /**
      * This method writes a line similar to what one might know from html
+     * @return String of MAXLINELENGTH '-'
      */
     public static String hr() {
         String s = "\n";
@@ -98,14 +99,11 @@ public class Utils {
     }
 
     /**
-     * TODO
-     */
-    public static boolean intArrContains(final int[] array, final int j) {
-        return Arrays.stream(array).anyMatch(i -> i == j);
-    }
-
-    /**
      * this Method finds Links in a String
+     * @param str the String to find links in
+     * @return a List of Strings containing of a first entry -> before the link
+     *                                           second entry -> the link
+     *                                           third entry -> behind the link
      */
     public static List<String> findLink(String str) {
         if (str.contains("https://")) {
@@ -132,9 +130,9 @@ public class Utils {
     }
 
     /**
-     * TODO
-     * @param language
-     * @return
+     * This Method converets a String to a Language enum
+     * @param language String
+     * @return language Enum
      */
     public static Language strToLangEnum(String language) {
         if (language.contains("de")) return Language.de;

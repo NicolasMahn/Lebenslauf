@@ -5,9 +5,9 @@ import java.util.HashMap;
 import static utils.Utils.intArrContains;
 
 /**
- * TODO
+ * This clas is a DIY Date Object
+ * @author NicolasMahn
  */
-
 public class Date {
     int day = 0;
     int month = 0;
