@@ -1,8 +1,6 @@
 package utils;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * @author NicolasMahn
@@ -30,6 +28,18 @@ public class Utils {
     }
 
     /**
+     * TODO
+     * @param numb
+     * @return
+     */
+    public static String findOrdinal(int numb) {
+        if ((numb-1)%10 == 0 && numb != 11) return "st";
+        else if ((numb-2)%10 == 0 && numb != 12) return "nd";
+        else if ((numb-3)%10 == 0 && numb != 13) return "rd";
+        else return "th";
+    }
+
+    /**
      * This method adds an Enters into a string that is too long. It also handles the tabbing.
      * An Enter is only added when the string exceeds the MAXLINELENGTH specified above.
      * If possible at a space, otherwise a word is split.
@@ -39,6 +49,14 @@ public class Utils {
      * @return the String is returned with enters
      */
     public static String newLine(String s, int space, int nlSpace) {
+
+        String[] sList = s.split("\\n");
+        if (sList.length > 1) {
+            String returnS = "";
+            for (String line : sList) returnS += newLine(line, space, nlSpace) + "\n";
+            return returnS;
+        }
+
         String s1 = s;
         String s2 = "";
         if (s.length()+space > MAXLINELENGTH){
@@ -73,7 +91,53 @@ public class Utils {
     /**
      * This method writes a line similar to what one might know from html
      */
-    public static void hr() {
-        for (int i = 0; i < MAXLINELENGTH; i++) System.out.print('-');
+    public static String hr() {
+        String s = "\n";
+        for (int i = 0; i < MAXLINELENGTH; i++) s += '-';
+        return s;
+    }
+
+    /**
+     * TODO
+     */
+    public static boolean intArrContains(final int[] array, final int j) {
+        return Arrays.stream(array).anyMatch(i -> i == j);
+    }
+
+    /**
+     * this Method finds Links in a String
+     */
+    public static List<String> findLink(String str) {
+        if (str.contains("https://")) {
+            String[] arr = str.split("https://");
+            String beforeLink = arr[0];
+            String tempSLink = "https://";
+            String tempBehindLink = "";
+            if (arr[1].contains(" ")) { //Links are not allowed to have spaces
+                tempSLink += arr[1].substring(0, arr[1].charAt(' '));
+                tempBehindLink = arr[1].substring(arr[1].charAt(' '));
+            } else tempSLink += arr[1];
+            String link = tempSLink;
+            String behindLink = tempBehindLink;
+            return new ArrayList<String>() {{
+                add(beforeLink);
+                add(link);
+                add(behindLink);
+            }};
+        } else {
+            return new ArrayList<String>() {{
+                add(str);
+            }};
+        }
+    }
+
+    /**
+     * TODO
+     * @param language
+     * @return
+     */
+    public static Language strToLangEnum(String language) {
+        if (language.contains("de")) return Language.de;
+        else return  Language.en;
     }
 }

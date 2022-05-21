@@ -1,7 +1,7 @@
 package objects;
 
-import utils.Languages;
-import utils.Utils;
+import utils.Language;
+import static utils.Utils.*;
 
 /**
  * @author NicolasMahn
@@ -12,7 +12,7 @@ public class Experience {
     int semester;
     String typ;
     String description;
-    Languages language;
+    Language language;
     String gitHubLink = null;
 
     /**
@@ -23,7 +23,7 @@ public class Experience {
      * @param gitHubLink A link to the project on GitHub
      * @param language describes the language with which this object should be printed
      */
-    public Experience(int semester, String typ, String description, String gitHubLink, Languages language) {
+    public Experience(int semester, String typ, String description, String gitHubLink, Language language) {
         this.semester = semester;
         this.typ = typ;
         this.description = description;
@@ -39,7 +39,7 @@ public class Experience {
      * @param description A free text in which the experience is briefly described
      * @param language describes the language with which this object should be printed
      */
-    public Experience(int semester, String typ, String description, Languages language) {
+    public Experience(int semester, String typ, String description, Language language) {
         this.semester = semester;
         this.typ = typ;
         this.description = description;
@@ -54,15 +54,15 @@ public class Experience {
     public String toString() {
         int NLSPACE = 10;
         String s;
-        if (language == Languages.de) {
-            s = typ + " \u00FCber " + Utils.newLine(description, typ.length() + 6, NLSPACE);
-            if (gitHubLink != null) s += "\n" + Utils.getSpace(NLSPACE) + "GitHub Link: " + gitHubLink;
-            s += "\n" + Utils.getSpace(NLSPACE) + semester + " Semester\n";
+        if (language == Language.de) {
+            s = typ + " \u00FCber " + newLine(description, typ.length() + 6, NLSPACE);
+            if (gitHubLink != null) s += "\n" + getSpace(NLSPACE) + "GitHub Link: " + gitHubLink;
+            s += "\n" + getSpace(NLSPACE) + semester + ". Semester\n";
         } else {
-            s = typ + " about " + Utils.newLine(description, typ.length() + 6, NLSPACE);
-            if (gitHubLink != null) s += "\n" + Utils.getSpace(NLSPACE) + "GitHub link: " + gitHubLink;
-            s += "\n" + Utils.getSpace(NLSPACE) + semester + " semester\n";
+            s = typ + " about " + newLine(description, typ.length() + 6, NLSPACE);
+            if (gitHubLink != null) s += "\n" + getSpace(NLSPACE) + "GitHub link: " + gitHubLink;
+            s += "\n" + getSpace(NLSPACE) + semester + findOrdinal(semester) +" semester\n";
         }
-        return s;
+        return s + "\n";
     }
 }

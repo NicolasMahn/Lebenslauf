@@ -1,19 +1,20 @@
 package objects;
 
-import utils.Languages;
-import utils.Utils;
+import utils.Date;
+import utils.Language;
+import static utils.Utils.*;
 
 /**
  * @author NicolasMahn
  * This object is used to save my stays abroad
  */
-public class StaysAbroad {
-    String beginning;
-    String departure;
+public class Abroad {
+    Date beginning;
+    Date departure;
     String country;
     String city;
     String task;
-    Languages language;
+    Language language;
 
     /**
      * This is the constructor of the StayAbroad object
@@ -24,7 +25,7 @@ public class StaysAbroad {
      * @param task describes what I did abroad
      * @param language describes the language with which this object should be printed
      */
-    public StaysAbroad(String beginning, String departure, String country, String city, String task, Languages language) {
+    public Abroad(Date beginning, Date departure, String country, String city, String task, Language language) {
         this.beginning = beginning;
         this.departure = departure;
         this.country = country;
@@ -39,11 +40,11 @@ public class StaysAbroad {
      */
     @Override
     public String toString() {
-        int space = city.length() + country.length() + 3;
-        String s= city + ", " + country + " ";
-        if (language == Languages.de) s += "vom " + beginning + " bis " + departure;
+        int space = city.length() + country.length() + 6;
+        String s= "In " + city + ", " + country + ", ";
+        if (language == Language.de) s += "von " + beginning + " bis " + departure;
         else s += "from " + beginning + " to " + departure;
-        s += "\n" + Utils.getSpace(space) + Utils.newLine(task, space) + "\n";
-        return s;
+        s += "\n" + getSpace(space) + newLine(task, space) + "\n";
+        return s + "\n";
     }
 }

@@ -1,135 +1,141 @@
+
+
+
 # CV
 --------------------------------------------------------------------------------
 This CV was provided by: https://github.com/NicolasMahn/Lebenslauf
 --------------------------------------------------------------------------------
 ## Personal Information
 
-E-Mail: Nicolas.Mahn@gmx.de
-Address: Untere Brandstraße 62, 70567 Stuttgart, Germany
-Tel.: 015206501315
-Born: 07.08.2000 in Stuttgart
 Name: Nicolas Mahn
+Address: Untere Brandstraße 62, 70567 Stuttgart
+E-Mail: Nicolas.Mahn@gmx.de
+Tel.: +4915206501315
+Born: 7.8.2000 in Stuttgart
+
+--------------------------------------------------------------------------------
+## Academic History
+
+Business Informatics: Since September 2019
+                      Furtwangen University (HFU)
+                      degree: prospectively Bachelor of Science in early 2023
+                      Special Interests: Machine Learning, Data Science and
+                      Software Development
+
+High School: Up to 2018
+             at Königin-Charlotte-Gymnasium in Stuttgart
+             degree: Abitur
+             bilingual english class
 
 
 --------------------------------------------------------------------------------
-## Educational Path
+## Professional experience
 
-Business Informatics: Since 09.2019
-                      Hochschule Furtwangen (HFU) in Furtwangen im Schwarzwald
-                      degree: prospectively Bachelor of Science in the year 2023
-                      special Interests: Machine Learning, Data Science and
-                      Software-Development
-
-Student Trainee: From the 01.11.2021-31.03.2022
+Student Trainee: From the 1.11.2021-31.3.2022
                  DB Systel
 
-Internship: From the 01.04.2021-30.09.2021
+Internship: From the 1.4.2021-30.9.2021
             DB Netz AG
-            in the department Digital Rail Germany.
-
-High School: Up to 2018
-             at the Königin-Charlotte-Gymnasium in Stuttgart
-             degree: Abitur
-             bilingual path
+            in the Department Digital Rail Germany.
 
 
 --------------------------------------------------------------------------------
 ## Studies
 
 Assignment about Cyber Physical Hacks
-          2 semester
+          2nd semester
 
-Assignment about Make-or-Buy process analysis with business process design
-          languages
-          2 semester
+Assignment about Make-or-Buy Process Analysis with Business Process Design
+          2nd semester
 
-Assignment about Assembler and system architecture
-          2 semester
+Assignment about Assembler und System Architecture
+          2nd semester
 
-Project about Development of an algorithm for route finding of e-trucks in Java
-          (application layer), MongoDB (data management layer) and
-          PHP/JS (presentation layer)
-          3 semester
+Project about Development of an Algorithm for Route Computation for E-Trucks in
+          Java (Application Layer), MongoDB (Data Management Layer)
+          and PHP/JS (Presentation Layer) 
+          3rd semester
 
-Project about Business Intelligence 1: Big data analytics project with Spark
+Project about Business Intelligence 1: Big Data Analytics Project with Spark
           GitHub link: https://github.com/1Zero64/BusinessIntelligence
-          5 semester
+          5th semester
 
-Project about Business Intelligence 2: Machine learning project with R
+Projekt about Business Intelligence 2: Machine Learning Project with R
           GitHub link: https://github.com/NicolasMahn/BusinessIntelligence2
-          5 semester
+          5th semester
 
 Assignment about decentralized Finance (DeFi)
-          5 semester
+          5th semester
 
-Project about Development of an intelligent packet management system in Python,
-          using a TSP algorithm
+Project about Development of an Intelligent Packet Management System in Python,
+          using a TSP Algorithm 
           GitHub link: https://github.com/NicolasMahn/IntPakman
-          5 semester
+          5th semester
 
-Market analysis about the city map branch was carried out for a company, at the
-          Institute for Business Consulting (IBC) a student
-          management consultancy
-          1 semester
+Market Analysis about the City Map Branch for a Company, carried out at the
+          Institute for Business Consulting (IBC) a Student Business Consultancy
+          1st semester
 
 
 --------------------------------------------------------------------------------
-## Stays Abroad
+## Experiences Abroad
 
-In Sion Mills, Northern Ireland from 03.2009 to 07.2009
+In Sion Mills, Northern Ireland, from March 2009 to August 2009
                                 Attended Sion Mills Primary School
 
-In Lyon, France from 03.2013 to 07.2013
+In Lyon, France, from March 2013 to August 2013
                 Attended Collège Charles de Foucault
 
-In Kampala, Uganda from 08.2018 to 08.2019
-                   Substitute math and science teacher at Kawempe Youth
+In Kampala, Uganda, from August 2018 to August 2019
+                   Substitute mathematics and science teacher at Kawempe Youth
                    Development Association Primary School
                    and Makarere West Valley Primary School
 
 
 --------------------------------------------------------------------------------
-## Commitments and Leisure Activities
+## Volunteer Work and Leisure Activities
 
-German Scout Association Sankt Georg 
-01.2017 - 07.2018 youth leader 
-Participation in aid projects in the Philippines and Palestine
+German Boy Scout Association Sankt Georg
+January 2017 - July 2018 youth Leader
+Participation in Aid Projects in the Philippines and in Palestine
 
-since the beginning of 2020 member of the business informatics student council 
-of the HFU
+Since March 2020 Member of the HFU Student Council of the HFU
 
-Sport (fitness training, jogging)
-Computer Games (Minecraft, AOE)
+Sport: Fitness Training, Jogging
+Computer Games: Minecraft, Smash, AOE
+Other Interests: GeoPolitics, Veganism
 
 
 --------------------------------------------------------------------------------
-## Qualifications
+## Skills
 
 
-### Foreign Languages:
-English        Own Rating: A
-French         Own Rating: B
+### Foreign Languages
+English        C1
+French         B1
 
-### Programming Languages:
-Java           Own Rating: A
-x86 Assembler  Own Rating: A
-Python         Own Rating: A
-SQL            Own Rating: B
-NoSQL          Own Rating: B
-Web Design     Own Rating: B
-GraphQL        Own Rating: C
+### Programming Languages
+Java           #####
+Python         #####
+x86 Assembler  ####:
+SQL            ####:
+NoSQL          ####:
+Web Design     ####:
+GraphQL        ###::
+Rest           ###::
 
-### Modeling Languages:
-UML            Own Rating: B
-BPMN           Own Rating: C
-Flowchart      Own Rating: C
-EPK            Own Rating: C
+### Modeling Languages
+UML            #####
+BPMN           ####:
+Flowchart      ####:
+EPK            ####:
 
-### Other Qualifications:
-Microsoft Word
+### Other Skills
+Microsoft Office
+Confluence
+Jira
 LaTeX
-Microsoft Power Point
-Microsoft Excel
-Microsoft Teams
+MS Teams
 Zoom
 SAP
+

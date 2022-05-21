@@ -1,22 +1,22 @@
 package objects;
 
-import utils.Languages;
-import utils.Utils;
+import utils.Date;
+import utils.Language;
+import static utils.Utils.*;
 
 /**
  * @author NicolasMahn
- * This object is used to save my educational path.
- * In this case, educational path summarizes both my education and my professional life.
+ * This object is used to save my educational path and professional experiences.
  */
-public class EducationalPath {
-    String from;
-    String to;
+public class Activity {
+    Date from;
+    Date to;
     String what;
     String degree;
     String where;
     String miscellaneous;
     String location;
-    Languages language;
+    Language language;
 
     /**
      * This is the constructor of the EducationalPath object.
@@ -29,8 +29,8 @@ public class EducationalPath {
      * @param miscellaneous is a free text for miscellaneous information
      * @param language describes the language with which this object should be printed
      */
-    public EducationalPath(String from, String to, String what, String degree, String where, String location,
-                    String miscellaneous, Languages language) {
+    public Activity(Date from, Date to, String what, String degree, String where, String location,
+                    String miscellaneous, Language language) {
         this.from = from;
         this.to = to;
         this.what = what;
@@ -48,26 +48,26 @@ public class EducationalPath {
     @Override
     public String toString() {
         String s = what +": ";
-        String space = Utils.getSpace(s.length());
-        if (language == Languages.de) {
+        String space = getSpace(s.length());
+        if (language == Language.de) {
             if (to == null) s += "Seit " + from + "\n";
             else if (from == null) s += "Bis " + to + "\n";
             else s += "Von " + from + "-" + to + "\n";
             s += space + where;
             if (location != null)
-                s += " in " + Utils.newLine(location, space.length()+ where.length()+4, space.length());
-            if (degree != null) s += "\n" + space + "Abschluss: " + Utils.newLine(degree, space.length()+11);
+                s += " in " + newLine(location, space.length()+ where.length()+4, space.length());
+            if (degree != null) s += "\n" + space + "Abschluss: " + newLine(degree, space.length()+11);
         } else {
             if (to == null) s += "Since " + from + "\n";
             else if (from == null) s += "Up to " + to + "\n";
             else s += "From the " + from + "-" + to + "\n";
             s += space + where;
             if (location != null)
-                s += " in " + Utils.newLine(location, space.length()+ where.length()+4, space.length());
-            if (degree != null) s += "\n" + space + "degree: " + Utils.newLine(degree, space.length()+8);
+                s += " in " + newLine(location, space.length()+ where.length()+4, space.length());
+            if (degree != null) s += "\n" + space + "degree: " + newLine(degree, space.length()+8);
         }
-        if (miscellaneous != null) s += "\n" + space + Utils.newLine(miscellaneous, space.length());
+        if (miscellaneous != null) s += "\n" + space + newLine(miscellaneous, space.length());
         s += "\n";
-        return s;
+        return s + "\n";
     }
 }

@@ -1,0 +1,301 @@
+{
+  "headline": "Lebenslauf",
+  "hierarchy": 1,
+  "language": "de",
+  "typ": "Tuple",
+  "attributes": [
+    {
+      "headline": "persönliche Daten",
+      "hierarchy": 2,
+      "typ": "Tuple",
+      "attributes": [
+        {
+          "typ": "KeyValue",
+          "attributes": ["Name", "Nicolas Mahn"]
+        },
+        {
+          "typ": "KeyValue",
+          "attributes": ["Adresse", "Untere Brandstraße 62, 70567 Stuttgart"]
+        },
+        {
+          "typ": "KeyValue",
+          "attributes": ["E-Mail", "Nicolas.Mahn@gmx.de"]
+        },
+        {
+          "typ": "KeyValue",
+          "attributes": ["Tel.", "+4915206501315"]
+        },
+        {
+          "typ": "KeyValue",
+          "attributes": ["Geboren", {
+            "typ": "Tuple",
+            "attributes": [{
+              "typ": "Date",
+              "attributes": [7, 8, 2000]
+            }, " in Stuttgart"]
+          }]
+        }
+      ]
+    },{
+      "headline": "Bildungsweg",
+      "hierarchy": 2,
+      "typ": "Tuple",
+      "attributes": [
+        {
+          "typ": "Activity",
+          "attributes": [
+            {"typ": "Date", "attributes": [9, 2019]},
+            null,
+            "Wirtschaftsinformatik Studium",
+            "voraussichtlich Bachelor of Science Anfang 2023",
+            "Hochschule Furtwangen (HFU)",
+            null,
+            "besondere Interessen: Machine Learning, Data Science und Software-Entwicklung"]
+        },{
+          "typ": "Activity",
+          "attributes": [
+            null,
+            {"typ": "Date", "attributes": [2018]},
+            "Schule",
+            "Abitur",
+            "am Königin-Charlotte-Gymnasium",
+            "Stuttgart",
+            "bilingualer Zug"]
+        }
+      ]
+    },{
+      "headline": "Berufserfahrung",
+      "hierarchy": 2,
+      "typ": "Tuple",
+      "attributes": [
+        {
+          "typ": "Activity",
+          "attributes": [
+            {"typ": "Date", "attributes": [1, 11, 2021]},
+            {"typ": "Date", "attributes": [31, 3, 2022]},
+            "Werkstudent",
+            null,
+            "DB Systel",
+            null,
+            null]
+        },{
+          "typ": "Activity",
+          "attributes": [
+            {"typ": "Date", "attributes": [1, 4, 2021]},
+            {"typ": "Date", "attributes": [30, 9, 2021]},
+            "Praktikum",
+            null,
+            "DB Netz AG",
+            null,
+            "im Konzernprogramm Digitale Schiene Deutschland."]
+        }
+      ]
+    },{
+      "headline": "Studium",
+      "hierarchy": 2,
+      "typ": "Tuple",
+      "attributes": [
+        {
+          "typ": "Experience",
+          "attributes": [
+            2,
+            "Wissenschaftliche Arbeit",
+            "Cyber Physical Hacks"]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            2,
+            "Hausarbeit",
+            "Make-or-Buy-Prozess-Analyse mit Geschäftsprozess-design-Sprachen"]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            2,
+            "Hausarbeit",
+            "Assembler und Systemarchitektur"]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            3,
+            "Projekt",
+            "Entwicklung eines Algorithmus zur Routenfindung von E-LKWs in Java (Anwendungsschicht), MongoDB (Datenhaltungsschicht) und PHP/JS (Präsentationsschicht)"]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            5,
+            "Projekt",
+            "Business Intelligence 1: Big Data Analitics Projekt mit Spark",
+            "https://github.com/1Zero64/BusinessIntelligence"]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            5,
+            "Projekt",
+            "Business Intelligence 2: Machine Learning Projekt mit R",
+            "https://github.com/NicolasMahn/BusinessIntelligence2"]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            5,
+            "Wissenschaftliche Arbeit",
+            "decentralized Finance (DeFi)"]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            5,
+            "Projekt",
+            "Entwicklung eines Intelligenten Packetmanagement-System in Python, anhand eines TSP Algorithmus",
+            "https://github.com/NicolasMahn/IntPakman"]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            1,
+            "Marktanalyse",
+            "die Stadtkartenbranche für ein Unternehmen, durchgeführt am Institut für Business Consulting (IBC), eine studentische Unternehmensberatung"]
+        }
+      ]
+    },{
+      "headline": "Auslandsaufenthalte",
+      "hierarchy": 2,
+      "typ": "Tuple",
+      "attributes": [
+        {
+          "typ": "Abroad",
+          "attributes": [
+            {"typ": "Date", "attributes": [3, 2009]},
+            {"typ": "Date", "attributes": [8, 2009]},
+            "Nordirland",
+            "Sion Mills",
+            "Besuch der Sion Mills Primary School"]
+        },{
+          "typ": "Abroad",
+          "attributes": [
+            {"typ": "Date", "attributes": [3, 2013]},
+            {"typ": "Date", "attributes": [8, 2013]},
+            "Frankreich",
+            "Lyon",
+            "Besuch des Collège Charles de Foucault"]
+        },{
+          "typ": "Abroad",
+          "attributes": [
+            {"typ": "Date", "attributes": [8, 2018]},
+            {"typ": "Date", "attributes": [8, 2019]},
+            "Uganda",
+            "Kampala",
+            "Aushilfslehrer für Mathematik und Science an der Kawempe Youth Development Association Primary School und der Makarere West Valley Primary School"]
+        }
+      ]
+    },{
+      "headline": "Engagement und Freizeit",
+      "hierarchy": 2,
+      "typ": "Tuple",
+      "attributes": [
+        "Deutsche Pfadfinderschaft Sankt Georg\nJanuar 2017 - Juli 2018 Jugendleiter\nTeilnahme an Hilfsprojekten auf den Philippinen und in Palästina\n",
+        "Seit März 2020 Mitglied der Fachschaft Wirtschaftsinformatik der Hochschule Furtwangen\n",
+        "Sport: Fitnesstraining, Joggen\nComputerspiele: Minecraft, Smash, AOE\nAndere Interessen: Geopolitik, Veganismus\n"
+      ]
+    },{
+      "headline": "Qualifikationen",
+      "hierarchy": 2,
+      "typ": "Tuple",
+      "attributes": [
+        {
+          "headline": "Fremdsprachen",
+          "hierarchy": 3,
+          "typ": "Tuple",
+          "size": 2,
+          "attributes": [
+            {
+              "typ": "Skill",
+              "attributes": ["Englisch", "C1"]
+            },{
+              "typ": "Skill",
+              "attributes": ["Französisch", "B1"]
+            }
+          ]
+        },{
+          "headline": "Programmiersprachen",
+          "hierarchy": 3,
+          "typ": "Tuple",
+          "size": 8,
+          "attributes": [
+            {
+              "typ": "Skill",
+              "attributes": ["Java", 5]
+            },{
+              "typ": "Skill",
+              "attributes": ["Python", 5]
+            },{
+              "typ": "Skill",
+              "attributes": ["x86 Assembler", 4]
+            },{
+              "typ": "Skill",
+              "attributes": ["SQL", 4]
+            },{
+              "typ": "Skill",
+              "attributes": ["NoSQL", 4]
+            },{
+              "typ": "Skill",
+              "attributes": ["Webdesign", 4]
+            },{
+              "typ": "Skill",
+              "attributes": ["GraphQL", 3]
+            },{
+              "typ": "Skill",
+              "attributes": ["Rest", 3]
+            }
+          ]
+        },{
+          "headline": "Modellierungssprachen",
+          "hierarchy": 3,
+          "typ": "Tuple",
+          "size": 4,
+          "attributes": [
+            {
+              "typ": "Skill",
+              "attributes": ["UML", 5]
+            },{
+              "typ": "Skill",
+              "attributes": ["BPMN", 4]
+            },{
+              "typ": "Skill",
+              "attributes": ["Flowchart", 4]
+            },{
+              "typ": "Skill",
+              "attributes": ["EPK", 4]
+            }
+          ]
+        },{
+          "headline": "Andere Qualifikationen",
+          "hierarchy": 3,
+          "typ": "Tuple",
+          "size": 7,
+          "attributes": [
+            {
+              "typ": "Skill",
+              "attributes": ["Microsoft Office"]
+            },{
+              "typ": "Skill",
+              "attributes": ["Confluence"]
+            },{
+              "typ": "Skill",
+              "attributes": ["Jira"]
+            },{
+              "typ": "Skill",
+              "attributes": ["LaTeX"]
+            },{
+              "typ": "Skill",
+              "attributes": ["MS Teams"]
+            },{
+              "typ": "Skill",
+              "attributes": ["Zoom"]
+            },{
+              "typ": "Skill",
+              "attributes": ["SAP"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
