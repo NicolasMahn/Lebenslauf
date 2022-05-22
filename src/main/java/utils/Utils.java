@@ -138,4 +138,14 @@ public class Utils {
         if (language.contains("de")) return Language.de;
         else return  Language.en;
     }
+
+    /**
+     * Finds out whether the key is in the array
+     * @param array
+     * @param key
+     * @return
+     */
+    public static boolean intArrContains(int[] array, int key) {
+        return Arrays.stream(array).anyMatch(i -> i == key);
+    }
 }
