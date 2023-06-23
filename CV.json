@@ -44,13 +44,23 @@
         {
           "typ": "Activity",
           "attributes": [
-            {"typ": "Date", "attributes": [9, 2019]},
+            { "typ": "Date", "attributes": [3, 2023]},
             null,
-            "Business Informatics",
-            "prospectively Bachelor of Science in early 2023",
+            "Business Architect Application",
+            "Master of Science (2025)",
             "Furtwangen University (HFU)",
             null,
-            "Special Interests: Machine Learning, Data Science and Software Development"]
+            "special interests: Machine Learning, Data Science and Software Development"]
+        },{
+          "typ": "Activity",
+          "attributes": [
+            {"typ": "Date", "attributes": [ 9, 2019 ]},
+            { "typ": "Date", "attributes": [12, 2022]},
+            "Business Informatics",
+            "Bachelor of Science (2023)",
+            "Furtwangen University (HFU)",
+            null,
+            null]
         },{
           "typ": "Activity",
           "attributes": [
@@ -69,6 +79,26 @@
       "typ": "Tuple",
       "attributes": [
         {
+          "typ": "Activity",
+          "attributes": [
+            {"typ": "Date", "attributes": [1, 11, 2021]},
+            null,
+            "Research Assistant",
+            null,
+            "Furtwangen University (HFU)",
+            null,
+            "At the Institute for Rural Mobility and Infrastructure (MIR)."]
+        },{
+          "typ": "Activity",
+          "attributes": [
+            {"typ": "Date", "attributes": [1, 6, 2022]},
+            {"typ": "Date", "attributes": [30, 9, 2022]},
+            "Student Trainee",
+            null,
+            "KPMG AG",
+            null,
+            null]
+        },{
           "typ": "Activity",
           "attributes": [
             {"typ": "Date", "attributes": [1, 11, 2021]},
@@ -98,60 +128,54 @@
         {
           "typ": "Experience",
           "attributes": [
-            2,
-            "Assignment",
-            "Cyber Physical Hacks"]
-        },{
-          "typ": "Experience",
-          "attributes": [
-            2,
-            "Assignment",
-            "Make-or-Buy Process Analysis with Business Process Design"]
-        },{
-          "typ": "Experience",
-          "attributes": [
-            2,
-            "Assignment",
-            "Assembler und System Architecture"]
-        },{
-          "typ": "Experience",
-          "attributes": [
-            3,
-            "Project",
-            "Development of an Algorithm for Route Computation for E-Trucks in Java (Application Layer), MongoDB (Data Management Layer) and PHP/JS (Presentation Layer) "]
-        },{
-          "typ": "Experience",
-          "attributes": [
-            5,
+            "5th Semester Bachelor (2021)",
             "Project",
             "Business Intelligence 1: Big Data Analytics Project with Spark",
-            "https://github.com/1Zero64/BusinessIntelligence"]
+            "www.github.com/1Zero64/BusinessIntelligence"]
         },{
           "typ": "Experience",
           "attributes": [
-            5,
-            "Projekt",
-            "Business Intelligence 2: Machine Learning Project with R",
-            "https://github.com/NicolasMahn/BusinessIntelligence2"]
-        },{
-          "typ": "Experience",
-          "attributes": [
-            5,
-            "Assignment",
-            "decentralized Finance (DeFi)"]
-        },{
-          "typ": "Experience",
-          "attributes": [
-            5,
+            "5th Semester Bachelor (2021)",
             "Project",
-            "Development of an Intelligent Packet Management System in Python, using a TSP Algorithm ",
-            "https://github.com/NicolasMahn/IntPakman"]
+            "Business Intelligence 2: Machine Learning Project with R",
+            "www.github.com/NicolasMahn/BusinessIntelligence2"]
         },{
           "typ": "Experience",
           "attributes": [
-            1,
-            "Market Analysis",
-            "the City Map Branch for a Company, carried out at the Institute for Business Consulting (IBC) a Student Business Consultancy"]
+            "5th Semester Bachelor (2021)",
+            "Project",
+            "Development of an Intelligent Packet Management System in Python, using a TSP Algorithm",
+            "www.github.com/NicolasMahn/IntPakman"]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            "6th Semester Bachelor (2022)",
+            "Project",
+            "Development of a Project Management Tool for KPMG",
+            null]
+        },
+        {
+          "typ": "Experience",
+          "attributes": [
+            "6th Semester Bachelor (2022)",
+            "Project",
+            "a faculty-organized duck race, where a ticket management system and an automated duck scanning system was developed.",
+            "www.github.com/NicolasMahn/DuckDetection"
+          ]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            "7th Semester Bachelor (2022)",
+            "Bachelor Thesis",
+            "Analysis and Development of Model Free Learning Algorithms",
+            "www.github.com/NicolasMahn/ModelFreeLearningAlgorithms"]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            "1st Semester Master (2023)",
+            "Project",
+            "Analysis of news agencies and development of a political bias detection algorithm.",
+            "www.github.com/NicolasMahn/VAI"]
         }
       ]
     },{
@@ -191,8 +215,8 @@
       "typ": "Tuple",
       "attributes": [
         "German Boy Scout Association Sankt Georg\nJanuary 2017 - July 2018 Youth Leader\nParticipation in Aid Projects in the Philippines and in Palestine\n",
-        "Since March 2020 Member of the HFU Student Council\n",
-        "Sport: Fitness Training, Jogging\nComputer Games: Minecraft, Smash, AOE\nOther Interests: GeoPolitics, Veganism\n"
+        "Member of the Institute for Business Consulting (a student consultancy) at Furtwangen University of Applied Sciences since December 2019.\n",
+        "Sport: Fitness Training, Jogging\nComputer Games: Minecraft, Smash, AOE\nOther Interests: Animal Rights Activism\n"
       ]
     },{
       "headline": "Skills",
@@ -239,10 +263,10 @@
               "attributes": ["Web Design", 4]
             },{
               "typ": "Skill",
-              "attributes": ["GraphQL", 3]
+              "attributes": ["GraphQL", 4]
             },{
               "typ": "Skill",
-              "attributes": ["Rest", 3]
+              "attributes": ["Rest", 4]
             }
           ]
         },{
@@ -269,9 +293,12 @@
           "headline": "Other Skills",
           "hierarchy": 3,
           "typ": "Tuple",
-          "size": 7,
+          "size": 9,
           "attributes": [
             {
+              "typ": "Skill",
+              "attributes": ["MuleSoft"]
+            },{
               "typ": "Skill",
               "attributes": ["Microsoft Office"]
             },{
@@ -283,6 +310,9 @@
             },{
               "typ": "Skill",
               "attributes": ["LaTeX"]
+            },{
+              "typ": "Skill",
+              "attributes": ["Linux"]
             },{
               "typ": "Skill",
               "attributes": ["MS Teams"]

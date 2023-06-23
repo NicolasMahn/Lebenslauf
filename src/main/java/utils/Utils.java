@@ -71,8 +71,12 @@ public class Utils {
                 s2 = getSpace(nlSpace) + s.substring(MAXLINELENGTH - space);
             }
         }
-        if (s2.length() > MAXLINELENGTH) s2 = newLine(s2, nlSpace, nlSpace);
+        if (s2.length() > MAXLINELENGTH && !isEmptyOrWhitespace(s2)) s2 = newLine(s2, 0, nlSpace);
         return (s1 + s2);
+    }
+
+    public static boolean isEmptyOrWhitespace(String str) {
+        return str.trim().isEmpty();
     }
 
     public static String newLine(String s, int space) {return newLine(s,space,space);}

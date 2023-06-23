@@ -25,6 +25,7 @@ import java.util.concurrent.TimeUnit;
  * This method executes the code
  */
 public class Main {
+
     static Language lang = null;
     static Tuple cv = null;
 
@@ -106,8 +107,8 @@ public class Main {
         try {
             PdfWriter writer = new PdfWriter(fileName);
             PdfDocument pdf = new PdfDocument(writer);
-            if (lang == Language.de) pdf.setDefaultPageSize(new PageSize(595f, 1770f));
-            else pdf.setDefaultPageSize(new PageSize(595f, 1720f));
+            if (lang == Language.de) pdf.setDefaultPageSize(new PageSize(595f, 1840f));
+            else pdf.setDefaultPageSize(new PageSize(595f, 1800f));
             Document doc = new Document(pdf);
             PdfFont font = PdfFontFactory.createFont(StandardFonts.COURIER);
 

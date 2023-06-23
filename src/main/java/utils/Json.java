@@ -120,10 +120,10 @@ public class Json {
     private static Experience makeExperience(Map<String, Object> map) {
         ArrayList<Object> attributes = (ArrayList) map.get("attributes");
         if (attributes.size() > 3) {
-            return new Experience((int) attributes.get(0), (String) attributes.get(1), (String) attributes.get(2),
+            return new Experience((String) attributes.get(0), (String) attributes.get(1), (String) attributes.get(2),
                     (String) attributes.get(3), language);
         } else {
-            return new Experience((int) attributes.get(0), (String) attributes.get(1), (String) attributes.get(2),
+            return new Experience((String) attributes.get(0), (String) attributes.get(1), (String) attributes.get(2),
                     language);
         }
     }
