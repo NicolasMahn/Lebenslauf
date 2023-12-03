@@ -13,21 +13,21 @@ public class Experience {
     String typ;
     String description;
     Language language;
-    String gitHubLink = null;
+    String link = null;
 
     /**
      * This is the constructor of the experience object
      * @param time describes in which semester I wrote the thesis
      * @param typ describes what typ of thesis I wrote
      * @param description A free text in which the experience is briefly described
-     * @param gitHubLink A link to the project on GitHub
+     * @param link A link to the project on GitHub
      * @param language describes the language with which this object should be printed
      */
-    public Experience(String time, String typ, String description, String gitHubLink, Language language) {
+    public Experience(String time, String typ, String description, String link, Language language) {
         this.time = time;
         this.typ = typ;
         this.description = description;
-        this.gitHubLink = gitHubLink;
+        this.link = link;
         this.language = language;
     }
 
@@ -55,12 +55,18 @@ public class Experience {
         int NLSPACE = 10;
         String s;
         if (language == Language.de) {
-            s = typ + " \u00FCber " + newLine(description, typ.length() + 6, NLSPACE);
-            if (gitHubLink != null) s += "\n" + getSpace(NLSPACE) + "GitHub Link: " + gitHubLink;
-            s += "\n" + getSpace(NLSPACE) + time;
+            if (typ.equals("Paper")) {
+                s = typ + " mit dem Thema \"" + newLine((description + "\""), typ.length() + 16, NLSPACE);
+                if (link != null) s += "\n" + getSpace(NLSPACE) + link;
+                s += "\n" + getSpace(NLSPACE) + time;
+            } else {
+                s = typ + " \u00FCber " + newLine(description, typ.length() + 6, NLSPACE);
+                if (link != null) s += "\n" + getSpace(NLSPACE) + "Zum Projekt: " + link;
+                s += "\n" + getSpace(NLSPACE) + time;
+            }
         } else {
             s = typ + " about " + newLine(description, typ.length() + 6, NLSPACE);
-            if (gitHubLink != null) s += "\n" + getSpace(NLSPACE) + "GitHub link: " + gitHubLink;
+            if (link != null) s += "\n" + getSpace(NLSPACE) + "To the Project: " + link;
             s += "\n" + getSpace(NLSPACE) + time;
         }
         return s + "\n";

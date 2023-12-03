@@ -52,7 +52,7 @@ public class Activity {
         if (language == Language.de) {
             if (to == null) s += "Seit " + from + "\n";
             else if (from == null) s += "Bis " + to + "\n";
-            else s += "Von " + from + "-" + to + "\n";
+            else s += "Von " + from + " - " + to + "\n";
             s += space + where;
             if (location != null)
                 s += " in " + newLine(location, space.length()+ where.length()+4, space.length());

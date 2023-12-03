@@ -82,7 +82,7 @@
           "typ": "Activity",
           "attributes": [
             {"typ": "Date", "attributes": [1, 11, 2021]},
-            null,
+            {"typ": "Date", "attributes": [31, 3, 2021]},
             "Wissenschaftlicher Mitarbeiter",
             null,
             "Hochschule Furtwangen (HFU)",
@@ -130,21 +130,7 @@
           "attributes": [
             "5. Semester Bachelor (2021)",
             "Projekt",
-            "Business Intelligence 1: Big Data Analitics Projekt mit Spark",
-            "www.github.com/1Zero64/BusinessIntelligence"]
-        },{
-          "typ": "Experience",
-          "attributes": [
-            "5. Semester Bachelor (2021)",
-            "Projekt",
-            "Business Intelligence 2: Machine Learning Projekt mit R",
-            "www.github.com/NicolasMahn/BusinessIntelligence2"]
-        },{
-          "typ": "Experience",
-          "attributes": [
-            "5. Semester Bachelor (2021)",
-            "Projekt",
-            "die entwicklung eines Intelligenten Packetmanagement-System in Python, anhand eines TSP Algorithmus",
+            "die Entwicklung eines Intelligenten Packetmanagement-System in Python, anhand eines TSP Algorithmus",
             "www.github.com/NicolasMahn/IntPakman"]
         },{
           "typ": "Experience",
@@ -176,6 +162,20 @@
             "Projekt",
             "Analyse von Nachichtenquellen und Entwicklung eines Algorithmus zur Erkennung von politischen Biasen",
             "www.github.com/NicolasMahn/VAI"]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            "1. & 2. Semester  Master (2023)",
+            "Projekt",
+            "Forschen an der Oprimierung von Job Shop Problemen mit Deep Q-Learning",
+            "www.github.com/NicolasMahn/RL_Resource_Manager"]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            "Beim MIR im Projekt Automatic Bike Path Analysis (ABPA)",
+            "Paper",
+            "A Multi-stage AI-Based Approach for Automatic Analyzation of Bike Paths: Stage 1 – Road Surface Detection",
+            "https://link.springer.com/chapter/10.1007/978-3-031-42532-5_5"]
         }
       ]
     },{
@@ -186,11 +186,11 @@
         {
           "typ": "Abroad",
           "attributes": [
-            {"typ": "Date", "attributes": [3, 2009]},
-            {"typ": "Date", "attributes": [8, 2009]},
-            "Nordirland",
-            "Sion Mills",
-            "Besuch der Sion Mills Primary School"]
+            {"typ": "Date", "attributes": [8, 2018]},
+            {"typ": "Date", "attributes": [8, 2019]},
+            "Uganda",
+            "Kampala",
+            "Aushilfslehrer für Mathematik und Science an der Kawempe Youth Development Association Primary School und der Makarere West Valley Primary School"]
         },{
           "typ": "Abroad",
           "attributes": [
@@ -202,11 +202,11 @@
         },{
           "typ": "Abroad",
           "attributes": [
-            {"typ": "Date", "attributes": [8, 2018]},
-            {"typ": "Date", "attributes": [8, 2019]},
-            "Uganda",
-            "Kampala",
-            "Aushilfslehrer für Mathematik und Science an der Kawempe Youth Development Association Primary School und der Makarere West Valley Primary School"]
+            {"typ": "Date", "attributes": [3, 2009]},
+            {"typ": "Date", "attributes": [8, 2009]},
+            "Nordirland",
+            "Sion Mills",
+            "Besuch der Sion Mills Primary School"]
         }
       ]
     },{
@@ -216,7 +216,7 @@
       "attributes": [
         "Deutsche Pfadfinderschaft Sankt Georg\nJanuar 2017 - Juli 2018 Jugendleiter\nTeilnahme an Hilfsprojekten auf den Philippinen und in Palästina\n",
         "Seit Dezember 2019 Mitglied im Institut für Business Consulting (eine studentische Unternehmensberatung) der Hochschule Furtwangen\n",
-        "Sport: Fitnesstraining, Joggen\nComputerspiele: Minecraft, Smash, AOE\nAndere Interessen: Tierrechsaktivismus\n"
+        "Sport: Fitnesstraining, American Football\nComputerspiele: Minecraft, Smash\nAndere Interessen: Tierrechsaktivismus\n"
       ]
     },{
       "headline": "Qualifikationen",
@@ -241,14 +241,20 @@
           "headline": "Programmiersprachen",
           "hierarchy": 3,
           "typ": "Tuple",
-          "size": 8,
+          "size": 9,
           "attributes": [
             {
+              "typ": "Skill",
+              "attributes": ["Python", 5]
+            },{
               "typ": "Skill",
               "attributes": ["Java", 5]
             },{
               "typ": "Skill",
-              "attributes": ["Python", 5]
+              "attributes": ["JavaScript", 3]
+            },{
+              "typ": "Skill",
+              "attributes": ["TypeScript", 3]
             },{
               "typ": "Skill",
               "attributes": ["SQL", 4]
@@ -257,13 +263,13 @@
               "attributes": ["NoSQL", 4]
             },{
               "typ": "Skill",
-              "attributes": ["Webdesign", 4]
-            },{
-              "typ": "Skill",
               "attributes": ["GraphQL", 4]
             },{
               "typ": "Skill",
               "attributes": ["Rest", 4]
+            },{
+              "typ": "Skill",
+              "attributes": ["Webdesign", 2]
             }
           ]
         },{
@@ -294,31 +300,19 @@
           "attributes": [
             {
               "typ": "Skill",
-              "attributes": ["MuleSoft"]
+              "attributes": ["Agiles arbeiten"]
             },{
               "typ": "Skill",
               "attributes": ["Microsoft Office"]
             },{
               "typ": "Skill",
-              "attributes": ["Confluence"]
-            },{
-              "typ": "Skill",
-              "attributes": ["Jira"]
+              "attributes": ["Atlassian Software"]
             },{
               "typ": "Skill",
               "attributes": ["LaTeX"]
             },{
               "typ": "Skill",
               "attributes": ["Linux"]
-            },{
-              "typ": "Skill",
-              "attributes": ["MS Teams"]
-            },{
-              "typ": "Skill",
-              "attributes": ["Zoom"]
-            },{
-              "typ": "Skill",
-              "attributes": ["SAP"]
             }
           ]
         }
