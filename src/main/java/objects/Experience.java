@@ -65,9 +65,15 @@ public class Experience {
                 s += "\n" + getSpace(NLSPACE) + time;
             }
         } else {
-            s = typ + " about " + newLine(description, typ.length() + 6, NLSPACE);
-            if (link != null) s += "\n" + getSpace(NLSPACE) + "To the Project: " + link;
-            s += "\n" + getSpace(NLSPACE) + time;
+            if (typ.equals("Paper")) {
+                s = typ + " with the Topic \"" + newLine((description + "\""), typ.length() + 17, NLSPACE);
+                if (link != null) s += "\n" + getSpace(NLSPACE) + link;
+                s += "\n" + getSpace(NLSPACE) + time;
+            } else {
+                s = typ + " about " + newLine(description, typ.length() + 6, NLSPACE);
+                if (link != null) s += "\n" + getSpace(NLSPACE) + "To the Project: " + link;
+                s += "\n" + getSpace(NLSPACE) + time;
+            }
         }
         return s + "\n";
     }

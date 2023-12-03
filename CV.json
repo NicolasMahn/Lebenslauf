@@ -82,7 +82,7 @@
           "typ": "Activity",
           "attributes": [
             {"typ": "Date", "attributes": [1, 11, 2021]},
-            null,
+            {"typ": "Date", "attributes": [31, 3, 2021]},
             "Research Assistant",
             null,
             "Furtwangen University (HFU)",
@@ -130,20 +130,6 @@
           "attributes": [
             "5th Semester Bachelor (2021)",
             "Project",
-            "Business Intelligence 1: Big Data Analytics Project with Spark",
-            "www.github.com/1Zero64/BusinessIntelligence"]
-        },{
-          "typ": "Experience",
-          "attributes": [
-            "5th Semester Bachelor (2021)",
-            "Project",
-            "Business Intelligence 2: Machine Learning Project with R",
-            "www.github.com/NicolasMahn/BusinessIntelligence2"]
-        },{
-          "typ": "Experience",
-          "attributes": [
-            "5th Semester Bachelor (2021)",
-            "Project",
             "Development of an Intelligent Packet Management System in Python, using a TSP Algorithm",
             "www.github.com/NicolasMahn/IntPakman"]
         },{
@@ -176,6 +162,20 @@
             "Project",
             "Analysis of news agencies and development of a political bias detection algorithm.",
             "www.github.com/NicolasMahn/VAI"]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            "1st & 2nd Semester  Master (2023)",
+            "Project",
+            "Researching an Deep Q-Learning Algorithm for Job Shop Problems",
+            "www.github.com/NicolasMahn/RL_Resource_Manager"]
+        },{
+          "typ": "Experience",
+          "attributes": [
+            "With MIR in the Projsect Automatic Bike Path Analysis (ABPA)",
+            "Paper",
+            "A Multi-stage AI-Based Approach for Automatic Analyzation of Bike Paths: Stage 1 – Road Surface Detection",
+            "https://link.springer.com/chapter/10.1007/978-3-031-42532-5_5"]
         }
       ]
     },{
@@ -216,7 +216,7 @@
       "attributes": [
         "German Boy Scout Association Sankt Georg\nJanuary 2017 - July 2018 Youth Leader\nParticipation in Aid Projects in the Philippines and in Palestine\n",
         "Member of the Institute for Business Consulting (a student consultancy) at Furtwangen University of Applied Sciences since December 2019.\n",
-        "Sport: Fitness Training, Jogging\nComputer Games: Minecraft, Smash, AOE\nOther Interests: Animal Rights Activism\n"
+        "Sport: Fitness Training, American Football\nComputer Games: Minecraft, Smash\nOther Interests: Animal Rights Activism\n"
       ]
     },{
       "headline": "Skills",
@@ -241,17 +241,20 @@
           "headline": "Programming Languages",
           "hierarchy": 3,
           "typ": "Tuple",
-          "size": 8,
+          "size": 9,
           "attributes": [
             {
-              "typ": "Skill",
-              "attributes": ["Java", 5]
-            },{
               "typ": "Skill",
               "attributes": ["Python", 5]
             },{
               "typ": "Skill",
-              "attributes": ["x86 Assembler", 4]
+              "attributes": ["Java", 5]
+            },{
+              "typ": "Skill",
+              "attributes": ["JavaScript", 3]
+            },{
+              "typ": "Skill",
+              "attributes": ["TypeScript", 3]
             },{
               "typ": "Skill",
               "attributes": ["SQL", 4]
@@ -260,17 +263,17 @@
               "attributes": ["NoSQL", 4]
             },{
               "typ": "Skill",
-              "attributes": ["Web Design", 4]
-            },{
-              "typ": "Skill",
               "attributes": ["GraphQL", 4]
             },{
               "typ": "Skill",
               "attributes": ["Rest", 4]
+            },{
+              "typ": "Skill",
+              "attributes": ["Webdesign", 2]
             }
           ]
         },{
-          "headline": "Modeling Languages",
+          "headline": "Modelling Languages",
           "hierarchy": 3,
           "typ": "Tuple",
           "size": 4,
@@ -290,38 +293,26 @@
             }
           ]
         },{
-          "headline": "Other Skills",
+          "headline": "Other Qualifications",
           "hierarchy": 3,
           "typ": "Tuple",
           "size": 9,
           "attributes": [
             {
               "typ": "Skill",
-              "attributes": ["MuleSoft"]
+              "attributes": ["Agile organisation"]
             },{
               "typ": "Skill",
               "attributes": ["Microsoft Office"]
             },{
               "typ": "Skill",
-              "attributes": ["Confluence"]
-            },{
-              "typ": "Skill",
-              "attributes": ["Jira"]
+              "attributes": ["Atlassian Software"]
             },{
               "typ": "Skill",
               "attributes": ["LaTeX"]
             },{
               "typ": "Skill",
               "attributes": ["Linux"]
-            },{
-              "typ": "Skill",
-              "attributes": ["MS Teams"]
-            },{
-              "typ": "Skill",
-              "attributes": ["Zoom"]
-            },{
-              "typ": "Skill",
-              "attributes": ["SAP"]
             }
           ]
         }
